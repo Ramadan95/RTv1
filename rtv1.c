@@ -11,10 +11,10 @@ void		CanvasToViewport(t_rtv1 *rtv1, int x, int y)
 	rtv1->d[2] += 0.25;
 }
 
-int 	lenght(t_rtv1 *rtv1)
-{
-
-}
+//int 	lenght(t_rtv1 *rtv1)
+//{
+//
+//}
 
 double	dot(const double v1[3], const double v2[3])
 {
@@ -52,8 +52,18 @@ void	IntersectRaySphere(t_rtv1 *rtv1)
 
 void	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
-//	rtv1->t = 10000;
-	int i;
+    double d = 100000;
+    double t = d;
+	IntersectRaySphere(rtv1);
+	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < t)
+	    t = rtv1->t[0];
+    if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < t)
+        t = rtv1->t[1];
+    if (t == d)
+        rtv1->sphere->color = 0x0;
+    else
+        rtv1->sphere->color = 0xFF;
+
 }
 
 
@@ -66,6 +76,15 @@ void	init(t_rtv1 *rtv1)
 	rtv1->o[0] = 0;
 	rtv1->o[1] = 0;
 	rtv1->o[2] = 0;
+}
+
+void    init_sphere(t_rtv1 *rtv1)
+{
+    rtv1->sphere->center[0] = 0;
+    rtv1->sphere->center[1] = -1;
+    rtv1->sphere->center[2] = 3;
+    rtv1->sphere->radius = 1;
+    rtv1->sphere->color = 0xFF;
 }
 
 int 	main()
@@ -83,6 +102,7 @@ int 	main()
 	SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
 	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
 	SDL_RenderClear(renderer);
+	init_sphere(rtv1);
 	int quit = 0;
 	int i;
 	int j;
@@ -93,25 +113,25 @@ int 	main()
 		}
 		if (event.type == SDL_KEYDOWN)
 		{
-//			if (event.key.keysym.sym == SDLK_DOWN)
-//			{
-//				for (x = 0; x < WIDTH; ++x)
-//					for (y = 0; y < HEIGHT; ++y) {
-//						SDL_SetRenderDrawColor(renderer, x, y, x, 255);
-//						SDL_RenderDrawPoint(renderer, x, y);
-//					}
-//				x = -HEIGHT / 2 - 1;
-//				while (++x < HEIGHT / 2)
-//				{
-//					y = -HEIGHT / 2 - 1;
-//					while (++y < HEIGHT / 2)
-//					{
-//						CanvasToViewport(rtv1, x, y);
-//						rtv1->color = TraceRay(O, D, 1, inf);
-//						canvas.PutPixel(x, y, color);
-//					}
-//				}
-//			}
+			if (event.key.keysym.sym == SDLK_DOWN)
+			{
+				for (x = 0; x < WIDTH; ++x)
+					for (y = 0; y < HEIGHT; ++y) {
+						SDL_SetRenderDrawColor(renderer, x, y, x, 255);
+						SDL_RenderDrawPoint(renderer, x, y);
+					}
+				x = -HEIGHT / 2 - 1;
+				while (++x < HEIGHT / 2)
+				{
+					y = -HEIGHT / 2 - 1;
+					while (++y < HEIGHT / 2)
+					{
+						CanvasToViewport(rtv1, x, y);
+						TraceRay(rtv1);
+						SDL_(x, y, rtv1->sphere->color);
+					}
+				}
+			}
 			if (event.key.keysym.sym == SDLK_1)
 			{
 				i = -1;
@@ -127,6 +147,8 @@ int 	main()
 			}
 			if (event.key.keysym.sym == SDLK_f)
 			{
+                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+                SDL_RenderClear(renderer);
 				SDL_RenderPresent(renderer);
 			}
 			if (event.key.keysym.sym == SDLK_ESCAPE)
@@ -139,3 +161,4 @@ int 	main()
 	SDL_Quit();
 	return EXIT_SUCCESS;
 }
+

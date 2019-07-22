@@ -8,8 +8,9 @@
 # include "frameworks/SDL2.framework/Headers/SDL.h"
 # include <stdio.h>
 # include <stdlib.h>
-# include "libft/libft.h"
-#include "gnl/get_next_line.h"
+# include "parser.h"
+# include "gnl/libft/libft.h"
+# include "gnl/get_next_line.h"
 
 # define WIDTH 1024
 # define HEIGHT 768
@@ -69,15 +70,6 @@ typedef	struct		s_sphere
 	double			color;
 }					t_sphere;
 
-typedef struct		s_cam
-{
-	int 			*pos[3];
-	int 			*rot[3];
-	int 			*dir[3];
-	int 			*updir[3];
-	int 			*ldir[3];
-}					t_cam;
-
 typedef struct		s_rtv1
 {
 	t_sphere		*sphere;
@@ -91,7 +83,7 @@ typedef struct		s_rtv1
 	double			k1;
 	double			k2;
 	double			k3;
-	double			t;
+//	double			t;
 	double			Vw;
 	double			Vh;
 	double			color;
@@ -100,6 +92,5 @@ typedef struct		s_rtv1
 	int				x;
 	int				y;
 }					t_rtv1;
-
 
 #endif //RTV1_SDL_H

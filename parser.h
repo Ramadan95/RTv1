@@ -7,7 +7,7 @@
 
 #include "rtv1.h"
 
-enum	e_nubm
+enum	e_numb
 {
 	ALL_GOOD,
 	NB_TOO_BIG,

@@ -48,10 +48,10 @@ RM = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cfahey/CLionProjects/SDL
+CMAKE_SOURCE_DIR = /Users/cfahey/Desktop/RTv1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cfahey/CLionProjects/SDL/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/cfahey/Desktop/RTv1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles /Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles /Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,98 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named SDL
+# Target rules for targets named RTv1
 
 # Build rule for target.
-SDL: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SDL
-.PHONY : SDL
+RTv1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RTv1
+.PHONY : RTv1
 
 # fast build rule for target.
-SDL/fast:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/build
-.PHONY : SDL/fast
-
-main.o: main.c.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/main.c.s
-.PHONY : main.c.s
-
-parse_obj.o: parse_obj.c.o
-
-.PHONY : parse_obj.o
-
-# target to build an object file
-parse_obj.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parse_obj.c.o
-.PHONY : parse_obj.c.o
-
-parse_obj.i: parse_obj.c.i
-
-.PHONY : parse_obj.i
-
-# target to preprocess a source file
-parse_obj.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parse_obj.c.i
-.PHONY : parse_obj.c.i
-
-parse_obj.s: parse_obj.c.s
-
-.PHONY : parse_obj.s
-
-# target to generate assembly for a file
-parse_obj.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parse_obj.c.s
-.PHONY : parse_obj.c.s
-
-parser.o: parser.c.o
-
-.PHONY : parser.o
-
-# target to build an object file
-parser.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parser.c.o
-.PHONY : parser.c.o
-
-parser.i: parser.c.i
-
-.PHONY : parser.i
-
-# target to preprocess a source file
-parser.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parser.c.i
-.PHONY : parser.c.i
-
-parser.s: parser.c.s
-
-.PHONY : parser.s
-
-# target to generate assembly for a file
-parser.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/parser.c.s
-.PHONY : parser.c.s
+RTv1/fast:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/build
+.PHONY : RTv1/fast
 
 rtv1.o: rtv1.c.o
 
@@ -210,7 +129,7 @@ rtv1.o: rtv1.c.o
 
 # target to build an object file
 rtv1.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/rtv1.c.o
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/rtv1.c.o
 .PHONY : rtv1.c.o
 
 rtv1.i: rtv1.c.i
@@ -219,7 +138,7 @@ rtv1.i: rtv1.c.i
 
 # target to preprocess a source file
 rtv1.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/rtv1.c.i
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/rtv1.c.i
 .PHONY : rtv1.c.i
 
 rtv1.s: rtv1.c.s
@@ -228,62 +147,8 @@ rtv1.s: rtv1.c.s
 
 # target to generate assembly for a file
 rtv1.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/rtv1.c.s
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/rtv1.c.s
 .PHONY : rtv1.c.s
-
-vector_scal.o: vector_scal.c.o
-
-.PHONY : vector_scal.o
-
-# target to build an object file
-vector_scal.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_scal.c.o
-.PHONY : vector_scal.c.o
-
-vector_scal.i: vector_scal.c.i
-
-.PHONY : vector_scal.i
-
-# target to preprocess a source file
-vector_scal.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_scal.c.i
-.PHONY : vector_scal.c.i
-
-vector_scal.s: vector_scal.c.s
-
-.PHONY : vector_scal.s
-
-# target to generate assembly for a file
-vector_scal.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_scal.c.s
-.PHONY : vector_scal.c.s
-
-vector_utils.o: vector_utils.c.o
-
-.PHONY : vector_utils.o
-
-# target to build an object file
-vector_utils.c.o:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_utils.c.o
-.PHONY : vector_utils.c.o
-
-vector_utils.i: vector_utils.c.i
-
-.PHONY : vector_utils.i
-
-# target to preprocess a source file
-vector_utils.c.i:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_utils.c.i
-.PHONY : vector_utils.c.i
-
-vector_utils.s: vector_utils.c.s
-
-.PHONY : vector_utils.s
-
-# target to generate assembly for a file
-vector_utils.c.s:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/vector_utils.c.s
-.PHONY : vector_utils.c.s
 
 # Help Target
 help:
@@ -293,25 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... SDL"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... parse_obj.o"
-	@echo "... parse_obj.i"
-	@echo "... parse_obj.s"
-	@echo "... parser.o"
-	@echo "... parser.i"
-	@echo "... parser.s"
+	@echo "... RTv1"
 	@echo "... rtv1.o"
 	@echo "... rtv1.i"
 	@echo "... rtv1.s"
-	@echo "... vector_scal.o"
-	@echo "... vector_scal.i"
-	@echo "... vector_scal.s"
-	@echo "... vector_utils.o"
-	@echo "... vector_utils.i"
-	@echo "... vector_utils.s"
 .PHONY : help
 
 

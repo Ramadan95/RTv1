@@ -4,7 +4,7 @@
 
 #include <fcntl.h>
 #include "rtv1.h"
-#include "parser.h"
+
 
 int 	g_nbline = 0;
 

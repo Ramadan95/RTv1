@@ -4,12 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/cfahey/CLionProjects/SDL/main.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/main.c.o"
-  "/Users/cfahey/CLionProjects/SDL/parse_obj.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/parse_obj.c.o"
-  "/Users/cfahey/CLionProjects/SDL/parser.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/parser.c.o"
-  "/Users/cfahey/CLionProjects/SDL/rtv1.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/rtv1.c.o"
-  "/Users/cfahey/CLionProjects/SDL/vector_scal.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/vector_scal.c.o"
-  "/Users/cfahey/CLionProjects/SDL/vector_utils.c" "/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles/SDL.dir/vector_utils.c.o"
+  "/Users/cfahey/Desktop/RTv1/parse_obj.c" "/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/SDL.dir/parse_obj.c.o"
+  "/Users/cfahey/Desktop/RTv1/parser.c" "/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/SDL.dir/parser.c.o"
+  "/Users/cfahey/Desktop/RTv1/rtv1.c" "/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/SDL.dir/rtv1.c.o"
+  "/Users/cfahey/Desktop/RTv1/vector_scal.c" "/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/SDL.dir/vector_scal.c.o"
+  "/Users/cfahey/Desktop/RTv1/vector_utils.c" "/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles/SDL.dir/vector_utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

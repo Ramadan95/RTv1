@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/SDL.dir/main.c.o"
   "CMakeFiles/SDL.dir/rtv1.c.o"
   "CMakeFiles/SDL.dir/parser.c.o"
   "CMakeFiles/SDL.dir/parse_obj.c.o"

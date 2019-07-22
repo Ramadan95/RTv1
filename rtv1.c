@@ -54,8 +54,6 @@ void	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
 //	rtv1->t = 10000;
 	int i;
-
-	while
 }
 
 
@@ -83,9 +81,11 @@ int 	main()
 	init(rtv1);
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
 	SDL_RenderClear(renderer);
 	int quit = 0;
+	int i;
+	int j;
 	while (!quit) {
 		SDL_WaitEvent(&event);
 		if (event.type == SDL_QUIT) {
@@ -112,6 +112,19 @@ int 	main()
 //					}
 //				}
 //			}
+			if (event.key.keysym.sym == SDLK_1)
+			{
+				i = -1;
+				j = -1;
+				while (++i < WIDTH)
+				{
+					while (++j < HEIGHT)
+					{
+						SDL_RenderDrawPoint(renderer, i, j);
+					}
+				}
+				SDL_RenderDrawPoint(renderer, i, i);
+			}
 			if (event.key.keysym.sym == SDLK_f)
 			{
 				SDL_RenderPresent(renderer);

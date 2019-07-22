@@ -59,45 +59,45 @@ RM = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cfahey/CLionProjects/SDL
+CMAKE_SOURCE_DIR = /Users/cfahey/Desktop/RTv1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cfahey/CLionProjects/SDL/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/cfahey/Desktop/RTv1/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/SDL.dir
+# Target rules for target CMakeFiles/RTv1.dir
 
 # All Build rule for target.
-CMakeFiles/SDL.dir/all:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/depend
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target SDL"
-.PHONY : CMakeFiles/SDL.dir/all
+CMakeFiles/RTv1.dir/all:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/depend
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target RTv1"
+.PHONY : CMakeFiles/RTv1.dir/all
 
 # Include target in all.
-all: CMakeFiles/SDL.dir/all
+all: CMakeFiles/RTv1.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SDL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SDL.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/CLionProjects/SDL/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/SDL.dir/rule
+CMakeFiles/RTv1.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RTv1.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/RTv1.dir/rule
 
 # Convenience name for target.
-SDL: CMakeFiles/SDL.dir/rule
+RTv1: CMakeFiles/RTv1.dir/rule
 
-.PHONY : SDL
-
-# clean rule for target.
-CMakeFiles/SDL.dir/clean:
-	$(MAKE) -f CMakeFiles/SDL.dir/build.make CMakeFiles/SDL.dir/clean
-.PHONY : CMakeFiles/SDL.dir/clean
+.PHONY : RTv1
 
 # clean rule for target.
-clean: CMakeFiles/SDL.dir/clean
+CMakeFiles/RTv1.dir/clean:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/clean
+.PHONY : CMakeFiles/RTv1.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/RTv1.dir/clean
 
 .PHONY : clean
 

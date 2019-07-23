@@ -38,7 +38,7 @@ void	IntersectRaySphere(t_rtv1 *rtv1)
 
 	rtv1->k1 = dot(rtv1->d, rtv1->d);
 	rtv1->k2 = 2 * dot(oc, rtv1->d);
-	rtv1->k3 = dot(oc, oc);
+	rtv1->k3 = dot(oc, oc) - r * r;
 
 	discriminant = rtv1->k2 * rtv1->k2 - 4 * rtv1->k1 * rtv1->k3;
 	if (discriminant < 0)
@@ -46,8 +46,10 @@ void	IntersectRaySphere(t_rtv1 *rtv1)
 		rtv1->t[0] = 0;
 		rtv1->t[1] = 0;
 	}
-	rtv1->t[0] = (-rtv1->k2 + sqrt(discriminant) / (2 * rtv1->k1));
-	rtv1->t[1] = (-rtv1->k2 - sqrt(discriminant) / (2 * rtv1->k1));
+	else {
+		rtv1->t[0] = (-rtv1->k2 + sqrt(discriminant) / (2 * rtv1->k1));
+		rtv1->t[1] = (-rtv1->k2 - sqrt(discriminant) / (2 * rtv1->k1));
+	}
 }
 
 void	TraceRay(t_rtv1 *rtv1, int min, int max)
@@ -64,7 +66,6 @@ void	TraceRay(t_rtv1 *rtv1, int min, int max)
         rtv1->sphere->color = 0xFF;
 
 }
-
 
 void	init(t_rtv1 *rtv1)
 {
@@ -102,7 +103,7 @@ int 	main()
 	init(rtv1);
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 	init_sphere(rtv1);
 	int quit = 0;
@@ -120,8 +121,7 @@ int 	main()
 			if (rtv1->a == rtv1->b)
 				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 			else
-				SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+				SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
 		}
 	}
 	SDL_RenderPresent(renderer);
@@ -130,8 +130,8 @@ int 	main()
 		if (event.type == SDL_QUIT) {
 			quit = 1;
 		}
-//		if (event.type == SDL_KEYDOWN)
-//		{
+		if (event.type == SDL_KEYDOWN)
+		{
 //			if (event.key.keysym.sym == SDLK_DOWN)
 //			{
 //				for (x = 0; x < WIDTH; ++x)
@@ -176,12 +176,10 @@ int 	main()
 //                SDL_RenderClear(renderer);
 //				SDL_RenderPresent(renderer);
 //			}
-//			if (event.key.keysym.sym == SDLK_ESCAPE)
-//				quit = 1;
-//		}
+			if (event.key.keysym.sym == SDLK_ESCAPE)
+				quit = 1;
+		}
 	}
-//	printf("%s", ft_itoa(0xFF));
-//	printf("%d", ft_isalpha(5));
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();

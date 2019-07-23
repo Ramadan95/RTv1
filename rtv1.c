@@ -56,7 +56,7 @@ double		IntersectRaySphere(t_rtv1 *rtv1, int i)
 	if (rtv1->t[0] <= 0.0001) {
 		return (-1);
 	}
-	double t = (rtv1->t[1] > rtv1->t[0]) ? rtv1->t[0] : rtv1->t[1];
+	double t = (rtv1->t[1] > 0) ? rtv1->t[1] : rtv1->t[0];
 	return (t);
 }
 

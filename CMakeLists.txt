@@ -3,7 +3,7 @@ project(RTv1 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(RTv1 rtv1.c)
+add_executable(RTv1 rtv1.c )
 
 find_library(SDL2 SDL2
 		PATH

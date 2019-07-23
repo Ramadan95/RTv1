@@ -4,7 +4,7 @@
 
 #include "rtv1.h"
 
-void		CanvasToViewport(t_rtv1 *rtv1, int x, int y)
+void		CanvasToViewport(t_rtv1 *rtv1, double x, double y)
 {
 	rtv1->d[0] = x * rtv1->Vw / WIDTH;
 	rtv1->d[1] = y * rtv1->Vh / HEIGHT;
@@ -52,14 +52,13 @@ void	IntersectRaySphere(t_rtv1 *rtv1)
 
 void	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
-    double d = 100000;
-    double t = d;
+    rtv1->a = rtv1->b;
 	IntersectRaySphere(rtv1);
-	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < t)
-	    t = rtv1->t[0];
-    if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < t)
-        t = rtv1->t[1];
-    if (t == d)
+	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < rtv1->a)
+	    rtv1->a = rtv1->t[0];
+    if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < rtv1->a)
+        rtv1->a = rtv1->t[1];
+    if (rtv1->a == rtv1->b)
         rtv1->sphere->color = 0x0;
     else
         rtv1->sphere->color = 0xFF;
@@ -90,8 +89,11 @@ void    init_sphere(t_rtv1 *rtv1)
 int 	main()
 {
 	t_rtv1 *rtv1;
+	t_sphere *sphere;
 
 	rtv1 = malloc(sizeof(t_rtv1));
+	sphere = malloc(sizeof(t_sphere));
+	rtv1->sphere = sphere;
 	SDL_Event event;
 	SDL_Renderer *renderer;
 	SDL_Window *window;
@@ -106,56 +108,80 @@ int 	main()
 	int quit = 0;
 	int i;
 	int j;
+	x = -WIDTH / 2 - 1;
+	while (++x < WIDTH / 2)
+	{
+		y = -HEIGHT / 2 - 1;
+		while (++y < HEIGHT / 2)
+		{
+			CanvasToViewport(rtv1, x, y);
+			TraceRay(rtv1, 1, 100000);
+			SDL_RenderDrawPoint(renderer, x, y);
+			if (rtv1->a == rtv1->b)
+				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+			else
+				SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+		}
+	}
+	SDL_RenderPresent(renderer);
 	while (!quit) {
 		SDL_WaitEvent(&event);
 		if (event.type == SDL_QUIT) {
 			quit = 1;
 		}
-		if (event.type == SDL_KEYDOWN)
-		{
-			if (event.key.keysym.sym == SDLK_DOWN)
-			{
-				for (x = 0; x < WIDTH; ++x)
-					for (y = 0; y < HEIGHT; ++y) {
-						SDL_SetRenderDrawColor(renderer, x, y, x, 255);
-						SDL_RenderDrawPoint(renderer, x, y);
-					}
-				x = -HEIGHT / 2 - 1;
-				while (++x < HEIGHT / 2)
-				{
-					y = -HEIGHT / 2 - 1;
-					while (++y < HEIGHT / 2)
-					{
-						CanvasToViewport(rtv1, x, y);
-						TraceRay(rtv1);
-						SDL_(x, y, rtv1->sphere->color);
-					}
-				}
-			}
-			if (event.key.keysym.sym == SDLK_1)
-			{
-				i = -1;
-				j = -1;
-				while (++i < WIDTH)
-				{
-					while (++j < HEIGHT)
-					{
-						SDL_RenderDrawPoint(renderer, i, j);
-					}
-				}
-				SDL_RenderDrawPoint(renderer, i, i);
-			}
-			if (event.key.keysym.sym == SDLK_f)
-			{
-                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-                SDL_RenderClear(renderer);
-				SDL_RenderPresent(renderer);
-			}
-			if (event.key.keysym.sym == SDLK_ESCAPE)
-				quit = 1;
-		}
+//		if (event.type == SDL_KEYDOWN)
+//		{
+//			if (event.key.keysym.sym == SDLK_DOWN)
+//			{
+//				for (x = 0; x < WIDTH; ++x)
+//					for (y = 0; y < HEIGHT; ++y) {
+//						SDL_SetRenderDrawColor(renderer, x, y, x, 255);
+//						SDL_RenderDrawPoint(renderer, x, y);
+//					}
+//				x = -HEIGHT / 2 - 1;
+//				while (++x < HEIGHT / 2)
+//				{
+//					y = -HEIGHT / 2 - 1;
+//					while (++y < HEIGHT / 2)
+//					{
+//						CanvasToViewport(rtv1, x, y);
+//						TraceRay(rtv1, 0, 1, t, d);
+//						SDL_RenderDrawPoint(renderer, x, y);
+//						if (t == d)
+//							SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+//						else
+//							SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+//						SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+//					}
+//				}
+//				SDL_RenderPresent(renderer);
+//			}
+//			if (event.key.keysym.sym == SDLK_1)
+//			{
+//				i = -1;
+//				j = -1;
+//				while (++i < WIDTH)
+//				{
+//					while (++j < HEIGHT)
+//					{
+//						SDL_RenderDrawPoint(renderer, i, j);
+//					}
+//				}
+//				SDL_RenderDrawPoint(renderer, i, i);
+//			}
+//			if (event.key.keysym.sym == SDLK_f)
+//			{
+//                SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+//                SDL_RenderClear(renderer);
+//				SDL_RenderPresent(renderer);
+//			}
+//			if (event.key.keysym.sym == SDLK_ESCAPE)
+//				quit = 1;
+//		}
 	}
-	printf("3");
+//	printf("%s", ft_itoa(0xFF));
+//	printf("%d", ft_isalpha(5));
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();

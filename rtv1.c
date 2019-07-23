@@ -81,23 +81,24 @@ int	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
 	int i;
 	int sphere_i;
-	double a;
+	double closest;
 	double b;
-	a = (double)max;
- 	i = -1;
+	closest = 99999999.0;
+ 	i = 0;
  	sphere_i = -1;
 //	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < b)
 //	    b = rtv1->t[0];
 //  if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < b)
 //        b = rtv1->t[1];
-	while (++i < rtv1->objcount)
+	while (i < rtv1->objcount)
 	{
 		b = IntersectRaySphere(rtv1, i);
-		if (b < a && b != 0)
+		if (b < closest && b != 0)
 		{
-			a = b;
+			closest = b;
 			sphere_i = i;
 		}
+		i++;
 	}
 	if (sphere_i != -1)
 		return ((int)rtv1->sphere[sphere_i].color);
@@ -113,7 +114,7 @@ void	init(t_rtv1 *rtv1)
 	rtv1->Vh = 1.0;
 	rtv1->o[0] = 0;
 	rtv1->o[1] = 0;
-	rtv1->o[2] = 0;
+	rtv1->o[2] = -5;
 	rtv1->objcount = 4;
 }
 
@@ -138,16 +139,15 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[2].color = 0x00FF00;
 
 	rtv1->sphere[3].center[0] = 0;
-	rtv1->sphere[3].center[1] = -5001;
-	rtv1->sphere[3].center[2] = 0;
-	rtv1->sphere[3].radius = 5000;
+	rtv1->sphere[3].center[1] = -51;
+	rtv1->sphere[3].center[2] = 3;
+	rtv1->sphere[3].radius = 50.0;
 	rtv1->sphere[3].color = 0xFFFF00;
 }
 
 int 	main()
 {
 	t_rtv1 *rtv1;
-	t_sphere *sphere;
 
 	rtv1 = malloc(sizeof(t_rtv1));
 	SDL_Event event;

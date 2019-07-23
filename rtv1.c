@@ -9,6 +9,10 @@ void		CanvasToViewport(t_rtv1 *rtv1, double x, double y)
 	rtv1->d[0] = x * rtv1->Vw / WIDTH;
 	rtv1->d[1] = y * rtv1->Vh / HEIGHT;
 	rtv1->d[2] = 1.0;
+//
+//	rtv1->o[0] = rtv1->d[0] + 1;
+//	rtv1->o[1] = rtv1->d[1] + 1;
+//	rtv1->o[2] = rtv1->d[2] + 1;
 }
 
 //int 	lenght(t_rtv1 *rtv1)
@@ -37,22 +41,22 @@ double		IntersectRaySphere(t_rtv1 *rtv1, int i)
 	oc[2] = rtv1->o[2] - c[2];
 
 	rtv1->k1 = dot(rtv1->d, rtv1->d);
-	rtv1->k2 =  dot(oc, rtv1->d);
+	rtv1->k2 = dot(oc, rtv1->d);
 	rtv1->k3 = dot(oc, oc) - r * r;
 
-	discriminant = rtv1->k2 * rtv1->k2 -  rtv1->k1 * rtv1->k3;
+	discriminant = rtv1->k2 * rtv1->k2 - rtv1->k1 * rtv1->k3;
 	if (discriminant < 0)
 	{
-		return (0);
+		return (-1);
 	}
 	else {
 		rtv1->t[0] = (-rtv1->k2 + sqrt(discriminant) / (rtv1->k1));
 		rtv1->t[1] = (-rtv1->k2 - sqrt(discriminant) / (rtv1->k1));
 	}
-	if (rtv1->t[0] < 0) {
-		return (0);
+	if (rtv1->t[0] <= 0.0001) {
+		return (-1);
 	}
-	double t = (rtv1->t[1] > 0) ? rtv1->t[1] : rtv1->t[0];
+	double t = (rtv1->t[1] > rtv1->t[0]) ? rtv1->t[0] : rtv1->t[1];
 	return (t);
 }
 
@@ -93,7 +97,7 @@ int	TraceRay(t_rtv1 *rtv1, int min, int max)
 	while (i < rtv1->objcount)
 	{
 		b = IntersectRaySphere(rtv1, i);
-		if (b < closest && b != 0)
+		if (b < closest && b != -1)
 		{
 			closest = b;
 			sphere_i = i;
@@ -141,7 +145,7 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[3].center[0] = 0;
 	rtv1->sphere[3].center[1] = -51;
 	rtv1->sphere[3].center[2] = 3;
-	rtv1->sphere[3].radius = 50.0;
+	rtv1->sphere[3].radius = 51.0;
 	rtv1->sphere[3].color = 0xFFFF00;
 }
 
@@ -168,27 +172,54 @@ int 	main()
 	int quit = 0;
 	int i;
 	int j;
-	x = -WIDTH / 2 - 1;
-	while (++x < WIDTH / 2)
-	{
-		y = -HEIGHT / 2 - 1;
-		while (++y < HEIGHT / 2)
-		{
-			CanvasToViewport(rtv1, x, -y);
-//				((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = 0xFF;
-			((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = TraceRay(rtv1, 1, 100000);
-		}
-	}
-	texture = SDL_CreateTextureFromSurface(renderer, surface);
-	SDL_RenderCopy(renderer, texture, NULL, NULL);
-	SDL_RenderPresent(renderer);
 	while (!quit) {
+
+		x = -WIDTH / 2 - 1;
+		while (++x < WIDTH / 2)
+		{
+			y = -HEIGHT / 2 - 1;
+			while (++y < HEIGHT / 2)
+			{
+				CanvasToViewport(rtv1, x, -y);
+//				((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = 0xFF;
+				((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = TraceRay(rtv1, 1, 100000);
+			}
+		}
+		texture = SDL_CreateTextureFromSurface(renderer, surface);
+		SDL_RenderClear(renderer);
+		SDL_RenderCopy(renderer, texture, NULL, NULL);
+		SDL_DestroyTexture(texture);
+		SDL_RenderPresent(renderer);
 		SDL_WaitEvent(&event);
 		if (event.type == SDL_QUIT) {
 			quit = 1;
 		}
 		if (event.type == SDL_KEYDOWN)
 		{
+			if (event.key.keysym.sym == SDLK_DOWN)
+			{
+				rtv1->o[1] -= 0.2;
+			}
+			else if (event.key.keysym.sym == SDLK_UP)
+			{
+				rtv1->o[1] += 0.2;
+			}
+			else if (event.key.keysym.sym == SDLK_RIGHT)
+			{
+				rtv1->o[0] += 0.2;
+			}
+			else if (event.key.keysym.sym == SDLK_LEFT)
+			{
+				rtv1->o[0] -= 0.2;
+			}
+			else if (event.key.keysym.sym == '=')
+			{
+				rtv1->o[2] += 0.2;
+			}
+			else if (event.key.keysym.sym == '-')
+			{
+				rtv1->o[2] -= 0.2;
+			}
 //			if (event.key.keysym.sym == SDLK_DOWN)
 //			{
 //				for (x = 0; x < WIDTH; ++x)

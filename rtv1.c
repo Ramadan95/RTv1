@@ -8,7 +8,7 @@ void		CanvasToViewport(t_rtv1 *rtv1, double x, double y)
 {
 	rtv1->d[0] = x * rtv1->Vw / WIDTH;
 	rtv1->d[1] = y * rtv1->Vh / HEIGHT;
-	rtv1->d[2] += 0.25;
+	rtv1->d[2] = 1.0;
 }
 
 //int 	lenght(t_rtv1 *rtv1)
@@ -21,70 +21,127 @@ double	dot(const double v1[3], const double v2[3])
 	return (v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2]);
 }
 
-void	IntersectRaySphere(t_rtv1 *rtv1)
+double		IntersectRaySphere(t_rtv1 *rtv1, int i)
 {
 	double  c[3];
 	double	r;
 	double	oc[3];
 	double	discriminant;
 
-	c[0] = rtv1->sphere->center[0];
-	c[1] = rtv1->sphere->center[1];
-	c[2] = rtv1->sphere->center[2];
-	r = rtv1->sphere->radius;
+	c[0] = rtv1->sphere[i].center[0];
+	c[1] = rtv1->sphere[i].center[1];
+	c[2] = rtv1->sphere[i].center[2];
+	r = rtv1->sphere[i].radius;
 	oc[0] = rtv1->o[0] - c[0];
 	oc[1] = rtv1->o[1] - c[1];
 	oc[2] = rtv1->o[2] - c[2];
 
 	rtv1->k1 = dot(rtv1->d, rtv1->d);
-	rtv1->k2 = 2 * dot(oc, rtv1->d);
+	rtv1->k2 =  dot(oc, rtv1->d);
 	rtv1->k3 = dot(oc, oc) - r * r;
 
-	discriminant = rtv1->k2 * rtv1->k2 - 4 * rtv1->k1 * rtv1->k3;
+	discriminant = rtv1->k2 * rtv1->k2 -  rtv1->k1 * rtv1->k3;
 	if (discriminant < 0)
 	{
-		rtv1->t[0] = 0;
-		rtv1->t[1] = 0;
+		return (0);
 	}
 	else {
-		rtv1->t[0] = (-rtv1->k2 + sqrt(discriminant) / (2 * rtv1->k1));
-		rtv1->t[1] = (-rtv1->k2 - sqrt(discriminant) / (2 * rtv1->k1));
+		rtv1->t[0] = (-rtv1->k2 + sqrt(discriminant) / (rtv1->k1));
+		rtv1->t[1] = (-rtv1->k2 - sqrt(discriminant) / (rtv1->k1));
 	}
+	if (rtv1->t[0] < 0) {
+		return (0);
+	}
+	double t = (rtv1->t[1] > 0) ? rtv1->t[1] : rtv1->t[0];
+	return (t);
 }
 
-void	TraceRay(t_rtv1 *rtv1, int min, int max)
-{
-    rtv1->a = rtv1->b;
-	IntersectRaySphere(rtv1);
-	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < rtv1->a)
-	    rtv1->a = rtv1->t[0];
-    if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < rtv1->a)
-        rtv1->a = rtv1->t[1];
-    if (rtv1->a == rtv1->b)
-        rtv1->sphere->color = 0x0;
-    else
-        rtv1->sphere->color = 0xFF;
+//double IntersectRaySphere(t_rtv1 * rtv1)//double3 start, double3 dir, t_cl_obj *obj)
+//{
+//	double zeroThreshold = 0.0001;
+//
+//	start = start - obj->center;
+//	double a = dot(dir, dir);
+//	double b = dot(start, dir);
+//	double c = dot(start, start) - obj->radius * obj->radius;
+//	double D = b*b -a*c;
+//
+//	if ( D < zeroThreshold )
+//		return (0.0);
+//	double qD = sqrt(D);
+//	double t1 = ( -b + qD)/(a);
+//	double t2 = ( -b - qD)/(a);
+//	if (t1 <= zeroThreshold)
+//		return (0.0);
+//	double t = (t2 > zeroThreshold) ? t2 : t1;
+//	return (t);
+//}
 
+int	TraceRay(t_rtv1 *rtv1, int min, int max)
+{
+	int i;
+	int sphere_i;
+	double a;
+	double b;
+	a = (double)max;
+ 	i = -1;
+ 	sphere_i = -1;
+//	if (rtv1->t[0] >= min && rtv1->t[0] <= max && rtv1->t[0] < b)
+//	    b = rtv1->t[0];
+//  if (rtv1->t[1] >= min && rtv1->t[1] <= max && rtv1->t[1] < b)
+//        b = rtv1->t[1];
+	while (++i < rtv1->objcount)
+	{
+		b = IntersectRaySphere(rtv1, i);
+		if (b < a && b != 0)
+		{
+			a = b;
+			sphere_i = i;
+		}
+	}
+	if (sphere_i != -1)
+		return ((int)rtv1->sphere[sphere_i].color);
+	else
+		return  (0x0);
 }
 
 void	init(t_rtv1 *rtv1)
 {
-	rtv1->v_size = 1;
-	rtv1->p_plane = 1;
-	rtv1->Vw = 1;
-	rtv1->Vh = 1;
+//	rtv1->v_size = 1;
+//	rtv1->p_plane = 1;
+	rtv1->Vw = 1.33333;
+	rtv1->Vh = 1.0;
 	rtv1->o[0] = 0;
 	rtv1->o[1] = 0;
 	rtv1->o[2] = 0;
+	rtv1->objcount = 4;
 }
 
 void    init_sphere(t_rtv1 *rtv1)
 {
-    rtv1->sphere->center[0] = 0;
-    rtv1->sphere->center[1] = -1;
-    rtv1->sphere->center[2] = 3;
-    rtv1->sphere->radius = 1;
-    rtv1->sphere->color = 0xFF;
+    rtv1->sphere[0].center[0] = 0;
+    rtv1->sphere[0].center[1] = -1;
+    rtv1->sphere[0].center[2] = 3;
+    rtv1->sphere[0].radius = 1;
+    rtv1->sphere[0].color = 0xFF0000;
+
+	rtv1->sphere[1].center[0] = 2;
+	rtv1->sphere[1].center[1] = 0;
+	rtv1->sphere[1].center[2] = 4;
+	rtv1->sphere[1].radius = 1;
+	rtv1->sphere[1].color = 0xFF;
+
+	rtv1->sphere[2].center[0] = -2;
+	rtv1->sphere[2].center[1] = 0;
+	rtv1->sphere[2].center[2] = 4;
+	rtv1->sphere[2].radius = 1;
+	rtv1->sphere[2].color = 0x00FF00;
+
+	rtv1->sphere[3].center[0] = 0;
+	rtv1->sphere[3].center[1] = -5001;
+	rtv1->sphere[3].center[2] = 0;
+	rtv1->sphere[3].radius = 5000;
+	rtv1->sphere[3].color = 0xFFFF00;
 }
 
 int 	main()
@@ -93,16 +150,18 @@ int 	main()
 	t_sphere *sphere;
 
 	rtv1 = malloc(sizeof(t_rtv1));
-	sphere = malloc(sizeof(t_sphere));
-	rtv1->sphere = sphere;
 	SDL_Event event;
 	SDL_Renderer *renderer;
 	SDL_Window *window;
+	SDL_Surface *surface;
+	SDL_Texture *texture;
+
 	int x;
 	int y;
 	init(rtv1);
 	SDL_Init(SDL_INIT_VIDEO);
 	SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
+	surface = SDL_CreateRGBSurface(0, WIDTH, HEIGHT, 32, 0, 0, 0, 0);
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 	init_sphere(rtv1);
@@ -115,15 +174,13 @@ int 	main()
 		y = -HEIGHT / 2 - 1;
 		while (++y < HEIGHT / 2)
 		{
-			CanvasToViewport(rtv1, x, y);
-			TraceRay(rtv1, 1, 100000);
-			SDL_RenderDrawPoint(renderer, x, y);
-			if (rtv1->a == rtv1->b)
-				SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-			else
-				SDL_SetRenderDrawColor(renderer, 255, 0, 0, 0);
+			CanvasToViewport(rtv1, x, -y);
+//				((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = 0xFF;
+			((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = TraceRay(rtv1, 1, 100000);
 		}
 	}
+	texture = SDL_CreateTextureFromSurface(renderer, surface);
+	SDL_RenderCopy(renderer, texture, NULL, NULL);
 	SDL_RenderPresent(renderer);
 	while (!quit) {
 		SDL_WaitEvent(&event);

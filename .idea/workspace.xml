@@ -11,9 +11,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbe1777-0e12-41e2-8ab3-2f5fbc74f1e6" name="Default Changelist" comment="">
+    <list default="true" id="9cbe1777-0e12-41e2-8ab3-2f5fbc74f1e6" name="Default Changelist" comment="last commr">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/RTv1.dir/rtv1.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RTv1" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/RTv1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rtv1.c" beforeDir="false" afterPath="$PROJECT_DIR$/rtv1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rtv1.h" beforeDir="false" afterPath="$PROJECT_DIR$/rtv1.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rtv1.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+            <state relative-caret-position="418">
+              <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
               <folding>
                 <element signature="e#90#141#0" expanded="true" />
               </folding>
@@ -52,8 +55,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rtv1.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="737">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="462">
+              <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+              <folding>
+                <marker date="1563905947000" expanded="true" signature="1996:2021" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,9 +81,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="902" />
-    <option name="y" value="23" />
-    <option name="width" value="1658" />
+    <option name="x" value="951" />
+    <option name="y" value="26" />
+    <option name="width" value="1488" />
     <option name="height" value="1334" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,6 +92,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -97,7 +104,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -138,7 +144,10 @@
       <updated>1563813069393</updated>
       <workItem from="1563813070519" duration="911000" />
       <workItem from="1563839044182" duration="3467000" />
-      <workItem from="1563890337256" duration="2254000" />
+      <workItem from="1563890337256" duration="3639000" />
+      <workItem from="1563894613533" duration="386000" />
+      <workItem from="1563896555862" duration="1052000" />
+      <workItem from="1563899736592" duration="5797000" />
     </task>
     <task id="LOCAL-00001" summary="last comm">
       <created>1563891294226</created>
@@ -147,18 +156,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563891294226</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="last commr">
+      <created>1563893028583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1563893028583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6632000" />
+    <option name="totallyTimeSpent" value="15252000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="902" y="23" width="1658" height="1334" extended-state="0" />
+    <frame x="951" y="26" width="1488" height="1334" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25618812" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23858921" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CMake" order="0" weight="0.32930756" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -206,18 +222,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="last comm" />
-    <option name="LAST_COMMIT_MESSAGE" value="last comm" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/rtv1.c</url>
-          <line>23</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="last commr" />
+    <option name="LAST_COMMIT_MESSAGE" value="last commr" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.c" />
@@ -266,8 +272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rtv1.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+        <state relative-caret-position="418">
+          <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding>
             <element signature="e#90#141#0" expanded="true" />
           </folding>
@@ -276,8 +282,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rtv1.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="737">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="462">
+          <caret line="139" column="18" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="18" />
+          <folding>
+            <marker date="1563905947000" expanded="true" signature="1996:2021" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -72,7 +72,7 @@ typedef	struct		s_sphere
 
 typedef struct		s_rtv1
 {
-	t_sphere		*sphere;
+	t_sphere		sphere[100];
 	double			a;
 	double			b;
 	double			o[3];

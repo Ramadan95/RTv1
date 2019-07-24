@@ -11,6 +11,7 @@
 # include "parser.h"
 # include "gnl/libft/libft.h"
 # include "gnl/get_next_line.h"
+# include <math.h>
 
 # define WIDTH 1024
 # define HEIGHT 768
@@ -70,9 +71,17 @@ typedef	struct		s_sphere
 	double			color;
 }					t_sphere;
 
+typedef struct      s_light
+{
+    char*           type;
+    double          intens;
+    double          pos[3];
+}                   t_light;
+
 typedef struct		s_rtv1
 {
 	t_sphere		sphere[100];
+	t_light         light[3];
 	double			a;
 	double			b;
 	double			o[3];

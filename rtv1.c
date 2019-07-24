@@ -56,7 +56,7 @@ double		IntersectRaySphere(t_rtv1 *rtv1, int i)
 	if (rtv1->t[0] <= 0.0001) {
 		return (-1);
 	}
-	double t = (rtv1->t[1] > 0) ? rtv1->t[1] : rtv1->t[0];
+	double t = (rtv1->t[1] < rtv1->t[0]) ? rtv1->t[1] : rtv1->t[0];
 	return (t);
 }
 
@@ -81,12 +81,35 @@ double		IntersectRaySphere(t_rtv1 *rtv1, int i)
 //	return (t);
 //}
 
+//double  ComputeLightning(t_rtv1 *rtv1, double p[3], double n[3])
+//{
+//    double l[3];
+//    double i;
+//    double n_dot;
+//
+//    i = 0.0;
+//    if (rtv1->light[0].type == "point")
+//    {
+//        l[0] = rtv1->light[0].pos[0] - p[0];
+//        l[1] = rtv1->light[0].pos[1] - p[1];
+//        l[2] = rtv1->light[0].pos[2] - p[2];
+//    }
+//    n_dot = dot(n, l);
+//    double len_n = (sqrt(n[0]*n[0] + n[1]*n[1] + n[2]*n[2]));
+//    double len_l = (sqrt(l[0]*l[0] + l[1]*l[1] + l[2]*l[2]));
+//    if (n_dot > 0)
+//        i = (rtv1->light[0].intens * n_dot) / (len_n * len_l) ;
+//    return (i);
+//}
+
 int	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
 	int i;
 	int sphere_i;
 	double closest;
 	double b;
+	double  p[3];
+	double  n[3];
 	closest = 99999999.0;
  	i = 0;
  	sphere_i = -1;
@@ -105,7 +128,16 @@ int	TraceRay(t_rtv1 *rtv1, int min, int max)
 		i++;
 	}
 	if (sphere_i != -1)
-		return ((int)rtv1->sphere[sphere_i].color);
+	{
+//	    p[0] = rtv1->o[0] * b * rtv1->d[0];
+//        p[1] = rtv1->o[1] * b * rtv1->d[1];
+//        p[2] = rtv1->o[2] * b * rtv1->d[2];
+//        n[0] = p[0] - rtv1->sphere[sphere_i].center[0];
+//        n[1] = p[1] - rtv1->sphere[sphere_i].center[1];
+//        n[2] = p[2] - rtv1->sphere[sphere_i].center[2];
+//        return ((int) rtv1->sphere[sphere_i].color) * ComputeLightning(rtv1, &p[3], &n[3]);
+        return ((int) rtv1->sphere[sphere_i].color);
+    }
 	else
 		return  (0x0);
 }
@@ -122,6 +154,8 @@ void	init(t_rtv1 *rtv1)
 	rtv1->objcount = 4;
 }
 
+void    ComputeLighting();
+
 void    init_sphere(t_rtv1 *rtv1)
 {
     rtv1->sphere[0].center[0] = 0;
@@ -136,17 +170,26 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[1].radius = 1;
 	rtv1->sphere[1].color = 0xFF;
 
-	rtv1->sphere[2].center[0] = -2;
+	rtv1->sphere[2].center[0] = 3;
 	rtv1->sphere[2].center[1] = 0;
-	rtv1->sphere[2].center[2] = 4;
+	rtv1->sphere[2].center[2] = 3;
 	rtv1->sphere[2].radius = 1;
 	rtv1->sphere[2].color = 0x00FF00;
 
 	rtv1->sphere[3].center[0] = 0;
-	rtv1->sphere[3].center[1] = -51;
-	rtv1->sphere[3].center[2] = 3;
-	rtv1->sphere[3].radius = 51.0;
+	rtv1->sphere[3].center[1] = -20;
+	rtv1->sphere[3].center[2] = 9;
+	rtv1->sphere[3].radius = 20.0;
 	rtv1->sphere[3].color = 0xFFFF00;
+}
+
+void    init_light(t_rtv1 *rtv1)
+{
+    rtv1->light[0].type = "point";
+    rtv1->light[0].intens = 0.2;
+    rtv1->light[0].pos[0] = 0;
+    rtv1->light[0].pos[1] = 0;
+    rtv1->light[0].pos[2] = 3;
 }
 
 int 	main()
@@ -169,6 +212,7 @@ int 	main()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 	init_sphere(rtv1);
+	init_light(rtv1);
 	int quit = 0;
 	int i;
 	int j;

@@ -42,3 +42,23 @@ t_vect		vec(double x, double y, double z)
 	v.z = z;
 	return (v);
 }
+
+t_vect	vector_subt(t_vect a, t_vect b)
+{
+	t_vect c;
+
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+	return (c);
+}
+
+t_vect	vector_sum(t_vect a, t_vect b)
+{
+	t_vect c;
+
+	c.x = a.x + b.x;
+	c.y = a.y + b.y;
+	c.z = a.z + b.z;
+	return (c);
+}

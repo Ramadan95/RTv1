@@ -13,10 +13,17 @@
 # include "gnl/get_next_line.h"
 # include <math.h>
 
-# define WIDTH 1024
-# define HEIGHT 768
+# define WIDTH 1000
+# define HEIGHT 1000
 
 # define pow(x) x * x
+
+typedef enum
+{
+	point,
+	directional,
+	ambient
+}			t_light_type;
 
 typedef struct		s_vect
 {
@@ -27,9 +34,9 @@ typedef struct		s_vect
 
 typedef	struct		s_color
 {
-	double			r;
-	double			g;
-	double			b;
+	unsigned int			r;
+	unsigned int			g;
+	unsigned int			b;
 }					t_color;
 
 typedef struct		s_ray
@@ -66,16 +73,18 @@ typedef	struct		s_scene
 
 typedef	struct		s_sphere
 {
-	double			center[3];
+	t_vect			center;
+	t_color			rgb;
+//	double			center[3];
 	double			radius;
 	double			color;
 }					t_sphere;
 
 typedef struct      s_light
 {
-    char*           type;
+    int           type;
     double          intens;
-    double          pos[3];
+    t_vect          pos;
 }                   t_light;
 
 typedef struct		s_rtv1
@@ -84,12 +93,13 @@ typedef struct		s_rtv1
 	t_light         light[3];
 	double			a;
 	double			b;
-	double			o[3];
-	double 			d[3];
+	t_vect			o;
+	t_vect 			d;
 	double 			v1[3];
 	double 			v2[3];
 	double			t[2];
 	int 			objcount;
+	int				lightcount;
 	int 			obj;
 	double			k1;
 	double			k2;
@@ -103,5 +113,10 @@ typedef struct		s_rtv1
 	int				x;
 	int				y;
 }					t_rtv1;
+
+
+t_vect	vector_subt(t_vect a, t_vect b);
+t_vect	vector_sum(t_vect a, t_vect b);
+t_vect	v_scal_mult(t_vect v, double n);
 
 #endif //RTV1_SDL_H

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RTv1.dir/rtv1.c.o"
+  "CMakeFiles/RTv1.dir/vector_utils.c.o"
+  "CMakeFiles/RTv1.dir/vector_scal.c.o"
   "RTv1.pdb"
   "RTv1"
 )

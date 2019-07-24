@@ -86,6 +86,12 @@
 		<Unit filename="/Users/kkuvalis/Desktop/rtv/rtv1.h">
 			<Option target="RTv1"/>
 		</Unit>
+		<Unit filename="/Users/kkuvalis/Desktop/rtv/vector_scal.c">
+			<Option target="RTv1"/>
+		</Unit>
+		<Unit filename="/Users/kkuvalis/Desktop/rtv/vector_utils.c">
+			<Option target="RTv1"/>
+		</Unit>
 		<Unit filename="/Users/kkuvalis/Desktop/rtv/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -150,6 +150,60 @@ rtv1.c.s:
 	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/rtv1.c.s
 .PHONY : rtv1.c.s
 
+vector_scal.o: vector_scal.c.o
+
+.PHONY : vector_scal.o
+
+# target to build an object file
+vector_scal.c.o:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_scal.c.o
+.PHONY : vector_scal.c.o
+
+vector_scal.i: vector_scal.c.i
+
+.PHONY : vector_scal.i
+
+# target to preprocess a source file
+vector_scal.c.i:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_scal.c.i
+.PHONY : vector_scal.c.i
+
+vector_scal.s: vector_scal.c.s
+
+.PHONY : vector_scal.s
+
+# target to generate assembly for a file
+vector_scal.c.s:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_scal.c.s
+.PHONY : vector_scal.c.s
+
+vector_utils.o: vector_utils.c.o
+
+.PHONY : vector_utils.o
+
+# target to build an object file
+vector_utils.c.o:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_utils.c.o
+.PHONY : vector_utils.c.o
+
+vector_utils.i: vector_utils.c.i
+
+.PHONY : vector_utils.i
+
+# target to preprocess a source file
+vector_utils.c.i:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_utils.c.i
+.PHONY : vector_utils.c.i
+
+vector_utils.s: vector_utils.c.s
+
+.PHONY : vector_utils.s
+
+# target to generate assembly for a file
+vector_utils.c.s:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/vector_utils.c.s
+.PHONY : vector_utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +216,12 @@ help:
 	@echo "... rtv1.o"
 	@echo "... rtv1.i"
 	@echo "... rtv1.s"
+	@echo "... vector_scal.o"
+	@echo "... vector_scal.i"
+	@echo "... vector_scal.s"
+	@echo "... vector_utils.o"
+	@echo "... vector_utils.i"
+	@echo "... vector_utils.s"
 .PHONY : help
 
 

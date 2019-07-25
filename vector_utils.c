@@ -71,3 +71,13 @@ t_vect	vector_sum(t_vect a, t_vect b)
 	c.z = a.z + b.z;
 	return (c);
 }
+
+t_color	color_sum(t_color a, t_color b)
+{
+    t_color c;
+
+    c.r = a.r + b.r;
+    c.g = a.g + b.g;
+    c.b = a.b + b.b;
+    return (c);
+}

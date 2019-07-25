@@ -31,6 +31,15 @@ t_vect	v_scal_mult(t_vect v, double n)
 	return (v);
 }
 
+t_color	v_color_mult(t_color v, double n)
+{
+    v.r *= n;
+    v.g *= n;
+    v.b *= n;
+
+    return (v);
+}
+
 t_vect	v_scal_div(t_vect v, double n)
 {
 	v.x /= n;

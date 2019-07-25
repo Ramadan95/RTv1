@@ -21,16 +21,25 @@ t_vect	norm(t_vect v)
 {
 	double	n;
 
-	n = sqrt(pow(v.x) + pow(v.y) + pow(v.z));
+	n = sqrt(defpow(v.x) + defpow(v.y) + defpow(v.z));
 	v.x = v.x / n;
 	v.y = v.y / n;
 	v.z = v.z / n;
 	return (v);
 }
+t_vect  vector_mult(t_vect a, t_vect b)
+{
+    t_vect c;
+
+    c.x = a.y * b.z - a.z * b.y;
+    c.y = a.z * b.x - a.x * b.z;
+    c.z = a.x * b.y - a.y * b.x;
+    return (c);
+}
 
 double	v_distance(t_vect v1, t_vect v2)
 {
-	return (sqrt(pow(v1.x - v2.x)) + sqrt(pow(v1.y - v2.y)) + sqrt(pow(v1.z - v2.z)));
+	return (sqrt(defpow(v1.x - v2.x)) + sqrt(defpow(v1.y - v2.y)) + sqrt(defpow(v1.z - v2.z)));
 }
 
 t_vect		vec(double x, double y, double z)

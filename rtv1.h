@@ -16,7 +16,7 @@
 # define WIDTH 1000
 # define HEIGHT 1000
 
-# define pow(x) x * x
+# define defpow(x) x * x
 
 typedef enum
 {
@@ -78,19 +78,21 @@ typedef	struct		s_sphere
 //	double			center[3];
 	double			radius;
 	double			color;
+	double          specular;
 }					t_sphere;
 
 typedef struct      s_light
 {
-    int           type;
+    int             type;
     double          intens;
     t_vect          pos;
+    t_vect          direction;
 }                   t_light;
 
 typedef struct		s_rtv1
 {
 	t_sphere		sphere[100];
-	t_light         light[3];
+	t_light         light[100];
 	double			a;
 	double			b;
 	t_vect			o;
@@ -118,5 +120,6 @@ typedef struct		s_rtv1
 t_vect	vector_subt(t_vect a, t_vect b);
 t_vect	vector_sum(t_vect a, t_vect b);
 t_vect	v_scal_mult(t_vect v, double n);
+t_vect  vector_mult(t_vect a, t_vect b);
 
 #endif //RTV1_SDL_H

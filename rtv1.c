@@ -20,10 +20,6 @@ void		CanvasToViewport(t_rtv1 *rtv1, double x, double y)
 	rtv1->d.x = x * rtv1->Vw / WIDTH;
 	rtv1->d.y = y * rtv1->Vh / HEIGHT;
 	rtv1->d.z = 1.0;
-//
-//	rtv1->o[0] = rtv1->d[0] + 1;
-//	rtv1->o[1] = rtv1->d[1] + 1;
-//	rtv1->o[2] = rtv1->d[2] + 1;
 }
 
 double	dot(const t_vect v1, const t_vect v2)
@@ -89,16 +85,20 @@ int		get_closest_object(t_vect start, t_vect dir, double *closest, t_rtv1 *rtv1)
 	return sphere_i;
 }
 
-double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n)
+
+double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 {
-   t_vect l;
-   double intens;
-   double n_dot;
+    t_vect l;
+    double intens;
+    double n_dot;
+    double r_dot;
 	int i;
 	double closest = 99999999.9;
+	t_vect  r;
 	i = 0;
 	intens = 0.0;
 
+	l = (t_vect){255, 255, 255};
 	while (i < rtv1->lightcount)
 	{
 		if (rtv1->light[i].type == ambient)
@@ -109,14 +109,23 @@ double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n)
 		}
 		closest = 99999999.9;
 		if (rtv1->light[i].type == point)
-		{
 			l = vector_subt(rtv1->light[i].pos, p);
-		}
+		if (rtv1->light[i].type == directional)
+		    l = rtv1->light[i].direction;
 		n_dot = dot(n, l);
 		double len_n = (v_length(n));
 		double len_l = (v_length(l));
 		if (n_dot > 0 && get_closest_object(p, l, &closest, rtv1) == -1)
     		intens += (rtv1->light[i].intens * n_dot) / (len_n * len_l);
+		if (s != -1)
+        {
+		    r = vector_subt(v_scal_mult(v_scal_mult(n, dot(l, n)), 2), l);
+		    r_dot = dot(r, v_scal_mult(rtv1->d, -1));
+		    double len_r = (v_length(r));
+		    double len_v = v_length(v_scal_mult(rtv1->d, -1));
+		    if (r_dot > 0)
+		        intens += (rtv1->light[i].intens) * (pow(r_dot/(len_r * len_v), s));
+        }
 		i++;
 	}
    return (intens);
@@ -157,7 +166,7 @@ t_color	TraceRay(t_rtv1 *rtv1, int min, int max)
 		n = vector_subt(p, rtv1->sphere[sphere_i].center);
 
 		ret = rtv1->sphere[sphere_i].rgb;
-		ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n));
+		ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->sphere[sphere_i].specular));
         return (ret);
     }
 	else
@@ -169,8 +178,8 @@ void	init(t_rtv1 *rtv1)
 	rtv1->Vw = 1.0;
 	rtv1->Vh = 1.0;
 	rtv1->o.x = 0;
-	rtv1->o.y = -0.8;
-	rtv1->o.z = 0;
+	rtv1->o.y = 1.5;
+	rtv1->o.z = -4;
 	rtv1->objcount = 4;
 }
 
@@ -185,8 +194,7 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[0].rgb.r = 255;
 	rtv1->sphere[0].rgb.g = 0;
 	rtv1->sphere[0].rgb.b = 0;
-
-
+	rtv1->sphere[0].specular = 500;
 
 	rtv1->sphere[1].center.x = 2;
 	rtv1->sphere[1].center.y = 0;
@@ -196,15 +204,17 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[1].rgb.r = 0;
 	rtv1->sphere[1].rgb.g = 0;
 	rtv1->sphere[1].rgb.b = 255;
+    rtv1->sphere[1].specular = 500;
 
 	rtv1->sphere[2].center.x = -2;
-	rtv1->sphere[2].center.y = -0;
+	rtv1->sphere[2].center.y = 0;
 	rtv1->sphere[2].center.z = 4;
 	rtv1->sphere[2].radius = 1;
-	rtv1->sphere[2].color = 0x00FF00;
+	rtv1->sphere[2].color = 0x0FF00;
 	rtv1->sphere[2].rgb.r = 0;
 	rtv1->sphere[2].rgb.g = 255;
 	rtv1->sphere[2].rgb.b = 0;
+    rtv1->sphere[2].specular = 500;
 
 	rtv1->sphere[3].center.x = 0;
 	rtv1->sphere[3].center.y = -51;
@@ -214,23 +224,28 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[3].rgb.r = 255;
 	rtv1->sphere[3].rgb.g = 255;
 	rtv1->sphere[3].rgb.b = 0;
+    rtv1->sphere[3].specular = 10;
 }
 
 void    init_light(t_rtv1 *rtv1)
 {
     rtv1->light[0].type = point;
-    rtv1->light[0].intens = 0.4;
-    rtv1->light[0].pos = (t_vect){5, 5, 2};
+    rtv1->light[0].intens = 0.32;
+    rtv1->light[0].pos = (t_vect){2, 1, 0};
 	
 
 	rtv1->light[1].type = ambient;
-    rtv1->light[1].intens = 0.15;
+    rtv1->light[1].intens = 0.08;
 
 	rtv1->light[2].type = point;
-    rtv1->light[2].intens = 0.7;
+    rtv1->light[2].intens = 0.37;
     rtv1->light[2].pos = (t_vect){-5, 5, 2};
+
+    rtv1->light[3].type = directional;
+    rtv1->light[3].intens = 0.2;
+    rtv1->light[3].direction = (t_vect){5, 4, 4};
 	
-	rtv1->lightcount = 3;
+	rtv1->lightcount = 4;
 }
 
 int 	main()

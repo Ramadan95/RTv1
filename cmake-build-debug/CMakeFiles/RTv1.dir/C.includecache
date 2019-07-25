@@ -622,6 +622,10 @@ string.h
 rtv1.h
 /Users/kkuvalis/Desktop/rtv/rtv1.h
 
+/Users/kkuvalis/Desktop/rtv/rtv1.c
+rtv1.h
+/Users/kkuvalis/Desktop/rtv/rtv1.h
+
 /Users/kkuvalis/Desktop/rtv/rtv1.h
 frameworks/SDL2.framework/Headers/SDL.h
 /Users/kkuvalis/Desktop/rtv/frameworks/SDL2.framework/Headers/SDL.h
@@ -637,12 +641,4 @@ gnl/get_next_line.h
 /Users/kkuvalis/Desktop/rtv/gnl/get_next_line.h
 math.h
 -
-
-/Users/kkuvalis/Desktop/rtv/vector_scal.c
-rtv1.h
-/Users/kkuvalis/Desktop/rtv/rtv1.h
-
-/Users/kkuvalis/Desktop/rtv/vector_utils.c
-rtv1.h
-/Users/kkuvalis/Desktop/rtv/rtv1.h
 

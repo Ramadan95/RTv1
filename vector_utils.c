@@ -79,5 +79,9 @@ t_color	color_sum(t_color a, t_color b)
     c.r = a.r + b.r;
     c.g = a.g + b.g;
     c.b = a.b + b.b;
+
+    if (c.r > 255) c.r = 255;
+    if (c.g > 255) c.g = 255;
+    if (c.g > 255) c.b = 255;
     return (c);
 }

@@ -124,5 +124,6 @@ t_vect	v_scal_mult(t_vect v, double n);
 t_vect  vector_mult(t_vect a, t_vect b);
 t_color	v_color_mult(t_color v, double n);
 t_color	color_sum(t_color a, t_color b);
+t_vect	norm(t_vect v);
 
 #endif //RTV1_SDL_H

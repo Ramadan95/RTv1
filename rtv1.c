@@ -34,7 +34,7 @@ double 	v_length(t_vect v)
 
 t_vect      ReflectRay(t_vect a, t_vect b)
 {
-    return (vector_subt(v_scal_mult(v_scal_mult(a, dot(b, a)), 2), b));
+    return (vector_subt(v_scal_mult(a, dot(a, b) * 2), b));
 }
 
 double		IntersectRaySphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
@@ -111,7 +111,7 @@ double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 			i++;
 			continue;
 		}
-		closest = 99999999.9;
+		//closest = 99999999.9;
 		if (rtv1->light[i].type == point)
 			l = vector_subt(rtv1->light[i].pos, p);
 		if (rtv1->light[i].type == directional)
@@ -129,6 +129,8 @@ double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 		    double len_v = v_length(v_scal_mult(rtv1->d, -1));
 		    if (r_dot > 0)
 		        intens += (rtv1->light[i].intens) * (pow(r_dot/(len_r * len_v), s));
+		    if (intens >= 1)
+		        intens = 1;
         }
 		i++;
 	}
@@ -152,7 +154,6 @@ t_color recalc_rgb(t_color rgb, double intencity)
 
 
 t_color	TraceRay(t_rtv1 *rtv1, t_vect o, t_vect d, double min, int max, double depth)
-//t_color	TraceRay(t_rtv1 *rtv1, int min, int max, int depth)
 {
 	t_color ret;
 	//int i;
@@ -165,31 +166,25 @@ t_color	TraceRay(t_rtv1 *rtv1, t_vect o, t_vect d, double min, int max, double d
 	closest = 99999999.0;
 	t_color colref;
 
-	sphere_i = get_closest_object(rtv1->o, rtv1->d, &closest, rtv1);
+	sphere_i = get_closest_object(o, d, &closest, rtv1);
 	if (sphere_i != -1)
 	{
 	    /*тени или свет, уже не помню*/
-		p = vector_sum(rtv1->o, v_scal_mult(rtv1->d, closest));
+		p = vector_sum(o, v_scal_mult(d, closest));
 		n = vector_subt(p, rtv1->sphere[sphere_i].center);
-
+        //n = norm(n);
+        //p = norm(p);
 		/*блики*/
 		ret = rtv1->sphere[sphere_i].rgb;
 		ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->sphere[sphere_i].specular));
 
 		/*отражения*/
 		r = rtv1->sphere[sphere_i].reflect;
-       // if (depth <= 0 || r <= 0)
-         //   return (ret);
-		while (depth >= 0) {
-            if (depth <= 0 || r <= 0)
-                return (ret);
-            ray = ReflectRay(v_scal_mult(rtv1->d, -1), n);
-            depth--;
-            colref = TraceRay(rtv1, p, ray, min, max, depth);
-            return (color_sum(v_color_mult(ret, 1 - r), v_color_mult(colref, r)));
-//            return(v_color_mult(color_sum(ret, colref), r));
-        }
-        //return (color_sum(v_color_mult(ret, 1 - r), v_color_mult(colref, r)));
+        if (depth <= 0 || r <= 0)
+            return (ret);
+            ray = ReflectRay(v_scal_mult(d, -1), n);
+            colref = TraceRay(rtv1, p, ray, 0.001, max, depth - 1);
+            return (color_sum(recalc_rgb(ret, 1 - r), recalc_rgb(colref, r)));
     }
 	else
 		return  ((t_color){0, 0, 0});
@@ -203,6 +198,7 @@ void	init(t_rtv1 *rtv1)
 	rtv1->o.y = 1.5;
 	rtv1->o.z = -4;
 	rtv1->objcount = 4;
+	//rtv1->closest = 99999
 }
 
 

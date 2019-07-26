@@ -183,7 +183,6 @@ void	init(t_rtv1 *rtv1)
 	rtv1->objcount = 4;
 }
 
-
 void    init_sphere(t_rtv1 *rtv1)
 {
     rtv1->sphere[0].center.x = 0;

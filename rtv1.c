@@ -32,10 +32,6 @@ double 	v_length(t_vect v)
 	return(sqrt(dot(v, v)));
 }
 
-t_vect      ReflectRay(t_vect a, t_vect b)
-{
-    return (vector_subt(v_scal_mult(v_scal_mult(a, dot(b, a)), 2), b));
-}
 
 double		IntersectRaySphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
 {
@@ -123,7 +119,7 @@ double  ComputeLightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
     		intens += (rtv1->light[i].intens * n_dot) / (len_n * len_l);
 		if (s != -1)
         {
-		    r = ReflectRay(n, l);
+		    r = vector_subt(v_scal_mult(v_scal_mult(n, dot(l, n)), 2), l);
 		    r_dot = dot(r, v_scal_mult(rtv1->d, -1));
 		    double len_r = (v_length(r));
 		    double len_v = v_length(v_scal_mult(rtv1->d, -1));
@@ -151,45 +147,27 @@ t_color recalc_rgb(t_color rgb, double intencity)
 }
 
 
-t_color	TraceRay(t_rtv1 *rtv1, t_vect o, t_vect d, double min, int max, double depth)
-//t_color	TraceRay(t_rtv1 *rtv1, int min, int max, int depth)
+
+t_color	TraceRay(t_rtv1 *rtv1, int min, int max)
 {
 	t_color ret;
 	//int i;
 	int sphere_i;
 	double closest;
-	double r;
+	double b;
 	t_vect  p;
 	t_vect  n;
-	t_vect  ray;
 	closest = 99999999.0;
-	t_color colref;
 
 	sphere_i = get_closest_object(rtv1->o, rtv1->d, &closest, rtv1);
 	if (sphere_i != -1)
 	{
-	    /*тени или свет, уже не помню*/
 		p = vector_sum(rtv1->o, v_scal_mult(rtv1->d, closest));
 		n = vector_subt(p, rtv1->sphere[sphere_i].center);
 
-		/*блики*/
 		ret = rtv1->sphere[sphere_i].rgb;
 		ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->sphere[sphere_i].specular));
-
-		/*отражения*/
-		r = rtv1->sphere[sphere_i].reflect;
-       // if (depth <= 0 || r <= 0)
-         //   return (ret);
-		while (depth >= 0) {
-            if (depth <= 0 || r <= 0)
-                return (ret);
-            ray = ReflectRay(v_scal_mult(rtv1->d, -1), n);
-            depth--;
-            colref = TraceRay(rtv1, p, ray, min, max, depth);
-            return (color_sum(v_color_mult(ret, 1 - r), v_color_mult(colref, r)));
-//            return(v_color_mult(color_sum(ret, colref), r));
-        }
-        //return (color_sum(v_color_mult(ret, 1 - r), v_color_mult(colref, r)));
+        return (ret);
     }
 	else
 		return  ((t_color){0, 0, 0});
@@ -217,7 +195,6 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[0].rgb.g = 0;
 	rtv1->sphere[0].rgb.b = 0;
 	rtv1->sphere[0].specular = 500;
-	rtv1->sphere[0].reflect = 0.2;
 
 	rtv1->sphere[1].center.x = 2;
 	rtv1->sphere[1].center.y = 0;
@@ -228,7 +205,6 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[1].rgb.g = 0;
 	rtv1->sphere[1].rgb.b = 255;
     rtv1->sphere[1].specular = 500;
-    rtv1->sphere[1].reflect = 0.3;
 
 	rtv1->sphere[2].center.x = -2;
 	rtv1->sphere[2].center.y = 0;
@@ -239,7 +215,6 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[2].rgb.g = 255;
 	rtv1->sphere[2].rgb.b = 0;
     rtv1->sphere[2].specular = 500;
-    rtv1->sphere[2].reflect = 0.4;
 
 	rtv1->sphere[3].center.x = 0;
 	rtv1->sphere[3].center.y = -51;
@@ -250,7 +225,6 @@ void    init_sphere(t_rtv1 *rtv1)
 	rtv1->sphere[3].rgb.g = 255;
 	rtv1->sphere[3].rgb.b = 0;
     rtv1->sphere[3].specular = 10;
-    rtv1->sphere[3].reflect = 0.5;
 }
 
 void    init_light(t_rtv1 *rtv1)
@@ -298,7 +272,6 @@ int 	main()
 	int quit = 0;
 	int i;
 	int j;
-	double rec_depth = 3;
 	while (!quit) {
 
 		x = 0;
@@ -309,8 +282,7 @@ int 	main()
 			{
 				CanvasToViewport(rtv1, x - WIDTH / 2, -y + HEIGHT / 2);
 //				((int *)surface->pixels)[(x + WIDTH / 2 + (y + HEIGHT / 2) * WIDTH)] = 0xFF;
-				/*((int *)surface->pixels)[(x + y * WIDTH)] = */
-				put_point(x, y, surface->pixels, TraceRay(rtv1, rtv1->o, rtv1->d, 1, 100000, rec_depth));
+				/*((int *)surface->pixels)[(x + y * WIDTH)] = */put_point(x, y, surface->pixels, TraceRay(rtv1, 1, 100000));
 			}
 		}
 		texture = SDL_CreateTextureFromSurface(renderer, surface);

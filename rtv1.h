@@ -11,6 +11,7 @@
 # include "parser.h"
 # include "gnl/libft/libft.h"
 # include "gnl/get_next_line.h"
+# include <OpenCL/opencl.h>
 # include <math.h>
 
 # define WIDTH 1000
@@ -24,6 +25,14 @@ typedef enum
 	directional,
 	ambient
 }			t_light_type;
+
+typedef enum
+{
+    sphere,
+    cone,
+    plane,
+    cylinder
+}			t_figure;
 
 typedef struct		s_vect
 {
@@ -44,6 +53,19 @@ typedef struct		s_ray
 	t_vect			org;
 	t_vect			dir;
 }					t_ray;
+
+typedef struct		s_s
+{
+    double			a;
+    double			b;
+    double			c;
+    double			diskr;
+    double			sq_diskr;
+    double			t1;
+    double			t2;
+    double			t;
+    double			k;
+}					t_s;
 
 typedef struct		s_cam
 {
@@ -75,11 +97,36 @@ typedef	struct		s_sphere
 {
 	t_vect			center;
 	t_color			rgb;
-//	double			center[3];
 	double			radius;
-	double			color;
 	double          specular;
 }					t_sphere;
+
+typedef struct      s_plane
+{
+    t_vect     		pos;
+    t_vect  		dir;
+    t_color         rgb;
+    double          specular;
+}			        t_plane;
+
+typedef	struct 		s_cylinder
+{
+	t_vect			pos;
+	t_vect			dir;
+	t_color         rgb;
+	double			radius;
+	double          specular;
+}					t_cylinder;
+
+typedef	struct		s_cone
+{
+	t_vect			pos;
+	t_vect			dir;
+	t_color         rgb;
+	double			angle;
+//	double			radius;
+	double          specular;
+}					t_cone;
 
 typedef struct      s_light
 {
@@ -92,11 +139,16 @@ typedef struct      s_light
 typedef struct		s_rtv1
 {
 	t_sphere		sphere[100];
+	t_plane         plane[100];
+	t_cylinder		cyl[100];
+	t_cone			cone[100];
 	t_light         light[100];
 	double			a;
 	double			b;
 	t_vect			o;
 	t_vect 			d;
+    int             name;
+    int 			shadows_on;
 	double 			v1[3];
 	double 			v2[3];
 	double			t[2];
@@ -121,5 +173,11 @@ t_vect	vector_subt(t_vect a, t_vect b);
 t_vect	vector_sum(t_vect a, t_vect b);
 t_vect	v_scal_mult(t_vect v, double n);
 t_vect  vector_mult(t_vect a, t_vect b);
+double	dot(const t_vect v1, const t_vect v2);
+t_vect	norm(t_vect v);
+t_vect	vector_project(t_vect a, t_vect b);
+double	v_distance(t_vect v1, t_vect v2);
+double	vect_length(t_vect v1);
+t_vect	reflect_ray(t_vect R, t_vect N);
 
 #endif //RTV1_SDL_H

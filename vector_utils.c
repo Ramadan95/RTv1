@@ -37,9 +37,24 @@ t_vect  vector_mult(t_vect a, t_vect b)
     return (c);
 }
 
+t_vect reflect_ray(t_vect R, t_vect N)
+{
+	double L;
+	t_vect tmp;
+
+	L = 2 * dot(N, R);
+	tmp = v_scal_mult(N, L);
+	return (vector_subt(tmp, R));
+}
+
 double	v_distance(t_vect v1, t_vect v2)
 {
 	return (sqrt(defpow(v1.x - v2.x)) + sqrt(defpow(v1.y - v2.y)) + sqrt(defpow(v1.z - v2.z)));
+}
+
+double	vect_length(t_vect v1)
+{
+	return (sqrt(defpow(v1.x) + defpow(v1.y) + defpow(v1.z)));
 }
 
 t_vect		vec(double x, double y, double z)
@@ -70,4 +85,14 @@ t_vect	vector_sum(t_vect a, t_vect b)
 	c.y = a.y + b.y;
 	c.z = a.z + b.z;
 	return (c);
+}
+
+t_vect	vector_project(t_vect a, t_vect b)
+{
+	t_vect	project;
+	double	dota;
+
+	dota = dot(a, b) / dot(b, b);
+	project = v_scal_mult(b, dota);
+	return (project);
 }

@@ -63,6 +63,48 @@ double		IntersectRaySphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
 	return (t);
 }
 
+static double	IntersectRayPlane(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)//t_vector start, t_vector dir, t_obj *plane)
+{
+    double zeroThreshold = 0.0001;
+    double dir_dot_c;
+    double cen_dot_c;
+    double t;
+    t_vect help;
+
+    help = vector_subt(start, rtv1->plane[i].pos);
+    dir_dot_c = dot(dir, rtv1->plane[i].dir);
+    cen_dot_c = dot(help, rtv1->plane[i].dir);
+    if (dir_dot_c == 0.0 || (dir_dot_c < 0 && cen_dot_c < 0) || (dir_dot_c > 0 && cen_dot_c > 0))
+        return (0);
+    t = -cen_dot_c / dir_dot_c;
+    return (t > zeroThreshold ? t : 0);
+}
+
+double IntersectRayCylinder(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
+{
+    double zeroThreshold = 0.0001;
+
+    start = vector_subt(start, rtv1->cyl[i].pos);
+
+    double dot_start_cyl_dir = dot(start, rtv1->cyl->dir);
+    double dot_dir_cyl_dir = dot(dir, rtv1->cyl->dir);
+
+    double a = dot(dir, dir) - dot_dir_cyl_dir * dot_dir_cyl_dir;
+    double b = 2 * (dot(dir, start) - dot_dir_cyl_dir * dot_start_cyl_dir);
+    double c = dot(start, start) - dot_start_cyl_dir * dot_start_cyl_dir - rtv1->cyl->radius * rtv1->cyl->radius;
+    double D = b*b - 4*a*c;
+
+    if ( D < zeroThreshold )
+        return (0.0);
+    double qD = sqrt(D);
+    double t1 = ( -b + qD)/(2*a);
+    double t2 = ( -b - qD)/(2*a);
+    if (t1 <= zeroThreshold)
+        return (0.0);
+    double t = (t2 >= zeroThreshold) ? t2 : t1;
+    return (t);
+}
+
 int		get_closest_object(t_vect start, t_vect dir, double *closest, t_rtv1 *rtv1)
 {
 	int sphere_i;
@@ -72,16 +114,39 @@ int		get_closest_object(t_vect start, t_vect dir, double *closest, t_rtv1 *rtv1)
 	sphere_i = -1;
 	i = 0;
  	//sphere_i = -1;
-	while (i < rtv1->objcount)
-	{
-		b = IntersectRaySphere(rtv1, start, dir, i);
-		if (b < *closest && b != -1)
-		{
-			*closest = b;
-			sphere_i = i;
-		}
-		i++;
-	}
+    if (rtv1->name == sphere) {
+        while (i < rtv1->objcount) {
+            b = IntersectRaySphere(rtv1, start, dir, i);
+            if (b < *closest && b != -1) {
+                *closest = b;
+                sphere_i = i;
+            }
+            i++;
+        }
+    }
+
+    if (rtv1->name == plane) {
+        while (i < rtv1->objcount) {
+            b = IntersectRayPlane(rtv1, start, dir, i);
+            if (b < *closest && b != -1) {
+                *closest = b;
+                sphere_i = i;
+            }
+            i++;
+        }
+    }
+
+    if (rtv1->name == cylinder) {
+        while (i < rtv1->objcount) {
+            b = IntersectRayCylinder(rtv1, start, dir, i);
+            if (b < *closest && b != -1) {
+                *closest = b;
+                sphere_i = i;
+            }
+            i++;
+        }
+    }
+
 	return sphere_i;
 }
 
@@ -158,15 +223,36 @@ t_color	TraceRay(t_rtv1 *rtv1, int min, int max)
 	t_vect  p;
 	t_vect  n;
 	closest = 99999999.0;
+    t_vect project;
 
 	sphere_i = get_closest_object(rtv1->o, rtv1->d, &closest, rtv1);
-	if (sphere_i != -1)
+	if (sphere_i != -1 && rtv1->name == sphere)
 	{
 		p = vector_sum(rtv1->o, v_scal_mult(rtv1->d, closest));
 		n = vector_subt(p, rtv1->sphere[sphere_i].center);
 
 		ret = rtv1->sphere[sphere_i].rgb;
 		ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->sphere[sphere_i].specular));
+        return (ret);
+    }
+	else if (sphere_i != -1 && rtv1->name == plane)
+    {
+        p = vector_sum(rtv1->o, v_scal_mult(rtv1->d, closest));
+        n = rtv1->plane[sphere_i].dir;
+        ret = rtv1->plane[sphere_i].rgb;
+        ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->plane[sphere_i].specular));
+        return (ret);
+    }
+	else if (sphere_i != -1 && rtv1->name == cylinder)
+    {
+        p = vector_sum(rtv1->o, v_scal_mult(rtv1->d, closest));
+        n = vector_subt(p, rtv1->cyl[sphere_i].pos);
+        project = vector_project(n, rtv1->cyl[sphere_i].dir);
+        n = norm(vector_subt(n, project));
+
+
+        ret = rtv1->cyl[sphere_i].rgb;
+        ret = recalc_rgb(ret, ComputeLightning(rtv1, p, n, rtv1->cyl[sphere_i].specular));
         return (ret);
     }
 	else
@@ -181,6 +267,7 @@ void	init(t_rtv1 *rtv1)
 	rtv1->o.y = 1.5;
 	rtv1->o.z = -4;
 	rtv1->objcount = 4;
+	rtv1->name = sphere;
 }
 
 void    init_sphere(t_rtv1 *rtv1)
@@ -226,24 +313,65 @@ void    init_sphere(t_rtv1 *rtv1)
     rtv1->sphere[3].specular = 10;
 }
 
+void	init_cylinder(t_rtv1 *rtv1)
+{
+    rtv1->cyl[0].pos.x = 1;
+    rtv1->cyl[0].pos.y = 1;
+    rtv1->cyl[0].pos.z = 0.1;
+    rtv1->cyl[0].dir.x = 1.0;
+    rtv1->cyl[0].dir.y = 1.0;
+    rtv1->cyl[0].dir.z = 0.1;
+    rtv1->cyl[0].rgb.r = 255;
+    rtv1->cyl[0].rgb.g = 0;
+    rtv1->cyl[0].rgb.b = 255;
+    rtv1->cyl[0].specular = 1;
+    rtv1->cyl[0].radius = 0.01;
+}
+
+
+void    init_plane(t_rtv1 *rtv1)
+{
+    rtv1->plane[0].pos.x = -1.0;
+    rtv1->plane[0].pos.y = -1.0;
+    rtv1->plane[0].pos.z = 0.0;
+    rtv1->plane[0].dir.x = 0.0;
+    rtv1->plane[0].dir.y = 1.0;
+    rtv1->plane[0].dir.z = 0.0;
+    rtv1->plane[0].rgb.r = 255;
+    rtv1->plane[0].rgb.g = 0;
+    rtv1->plane[0].rgb.b = 255;
+    rtv1->plane[0].specular = 0;
+
+    rtv1->plane[1].pos.x = -1.0;
+    rtv1->plane[1].pos.y = -1.0;
+    rtv1->plane[1].pos.z = 0.0;
+    rtv1->plane[1].dir.x = 0.0;
+    rtv1->plane[1].dir.y = 1.0;
+    rtv1->plane[1].dir.z = 0.0;
+    rtv1->plane[1].rgb.r = 255;
+    rtv1->plane[1].rgb.g = 0;
+    rtv1->plane[1].rgb.b = 255;
+    rtv1->plane[1].specular = 40;
+}
+
 void    init_light(t_rtv1 *rtv1)
 {
     rtv1->light[0].type = point;
     rtv1->light[0].intens = 0.32;
     rtv1->light[0].pos = (t_vect){2, 1, 0};
-	
+
 
 	rtv1->light[1].type = ambient;
-    rtv1->light[1].intens = 0.08;
+    rtv1->light[1].intens = 0.2;
 
 	rtv1->light[2].type = point;
-    rtv1->light[2].intens = 0.37;
+    rtv1->light[2].intens = 0.27;
     rtv1->light[2].pos = (t_vect){-5, 5, 2};
 
     rtv1->light[3].type = directional;
     rtv1->light[3].intens = 0.2;
     rtv1->light[3].direction = (t_vect){5, 4, 4};
-	
+
 	rtv1->lightcount = 4;
 }
 
@@ -267,10 +395,10 @@ int 	main()
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
 	SDL_RenderClear(renderer);
 	init_sphere(rtv1);
+	init_cylinder(rtv1);
+	init_plane(rtv1);
 	init_light(rtv1);
 	int quit = 0;
-	int i;
-	int j;
 	while (!quit) {
 
 		x = 0;

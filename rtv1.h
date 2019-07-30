@@ -25,6 +25,14 @@ typedef enum
 	ambient
 }			t_light_type;
 
+typedef enum
+{
+    sphere,
+    cone,
+    plane,
+    cylinder
+}			t_figure;
+
 typedef struct		s_vect
 {
 	double			x;
@@ -81,6 +89,23 @@ typedef	struct		s_sphere
 	double          specular;
 }					t_sphere;
 
+typedef struct      s_plane
+{
+    t_vect     		pos;
+    t_vect  		dir;
+    t_color         rgb;
+    double          specular;
+}			        t_plane;
+
+typedef	struct 		s_cylinder
+{
+    t_vect			pos;
+    t_vect			dir;
+    t_color         rgb;
+    double			radius;
+    double          specular;
+}					t_cylinder;
+
 typedef struct      s_light
 {
     int             type;
@@ -92,7 +117,10 @@ typedef struct      s_light
 typedef struct		s_rtv1
 {
 	t_sphere		sphere[100];
+	t_plane         plane[100];
+	t_cylinder      cyl[100];
 	t_light         light[100];
+    int             name;
 	double			a;
 	double			b;
 	t_vect			o;
@@ -121,5 +149,8 @@ t_vect	vector_subt(t_vect a, t_vect b);
 t_vect	vector_sum(t_vect a, t_vect b);
 t_vect	v_scal_mult(t_vect v, double n);
 t_vect  vector_mult(t_vect a, t_vect b);
+t_vect	vector_project(t_vect a, t_vect b);
+t_vect	norm(t_vect v);
+double	dot(const t_vect v1, const t_vect v2);
 
 #endif //RTV1_SDL_H

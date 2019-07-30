@@ -71,3 +71,15 @@ t_vect	vector_sum(t_vect a, t_vect b)
 	c.z = a.z + b.z;
 	return (c);
 }
+
+t_vect	vector_project(t_vect a, t_vect b)
+{
+    t_vect	project;
+    double	dota;
+
+    dota = dot(a, b) / dot(b, b);
+    project = v_scal_mult(b, dota);
+    return (project);
+}
+
+

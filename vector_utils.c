@@ -1,63 +1,18 @@
-//
-// Created by Calista Fahey on 2019-07-18.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vector_utils.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cfahey <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/03 05:19:14 by cfahey            #+#    #+#             */
+/*   Updated: 2019/08/03 05:19:17 by cfahey           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "rtv1.h"
 
-t_vect	v_matr_mult(double mat[4][4], t_vect v)
-{
-	t_vect	ret;
-
-	ret.x = (mat[0][0] * v.x) + (mat[1][0] * v.y) +
-			(mat[2][0] * v.z) + (mat[3][0] * 1);
-	ret.y = (mat[0][1] * v.x) + (mat[1][1] * v.y) +
-			(mat[2][1] * v.z) + (mat[3][1] * 1);
-	ret.z = (mat[0][2] * v.x) + (mat[1][2] * v.y) +
-			(mat[2][2] * v.z) + (mat[3][2] * 1);
-	return (ret);
-}
-
-t_vect	norm(t_vect v)
-{
-	double	n;
-
-	n = sqrt(defpow(v.x) + defpow(v.y) + defpow(v.z));
-	v.x = v.x / n;
-	v.y = v.y / n;
-	v.z = v.z / n;
-	return (v);
-}
-t_vect  vector_mult(t_vect a, t_vect b)
-{
-    t_vect c;
-
-    c.x = a.y * b.z - a.z * b.y;
-    c.y = a.z * b.x - a.x * b.z;
-    c.z = a.x * b.y - a.y * b.x;
-    return (c);
-}
-
-t_vect reflect_ray(t_vect R, t_vect N)
-{
-	double L;
-	t_vect tmp;
-
-	L = 2 * dot(N, R);
-	tmp = v_scal_mult(N, L);
-	return (vector_subt(tmp, R));
-}
-
-double	v_distance(t_vect v1, t_vect v2)
-{
-	return (sqrt(defpow(v1.x - v2.x)) + sqrt(defpow(v1.y - v2.y)) + sqrt(defpow(v1.z - v2.z)));
-}
-
-double	vect_length(t_vect v1)
-{
-	return (sqrt(defpow(v1.x) + defpow(v1.y) + defpow(v1.z)));
-}
-
-t_vect		vec(double x, double y, double z)
+t_vect	vec(double x, double y, double z)
 {
 	t_vect	v;
 
@@ -87,10 +42,26 @@ t_vect	vector_sum(t_vect a, t_vect b)
 	return (c);
 }
 
+t_color	color_sum(t_color a, t_color b)
+{
+	t_color c;
+
+	c.r = a.r + b.r;
+	c.g = a.g + b.g;
+	c.b = a.b + b.b;
+	if (c.r > 255)
+		c.r = 255;
+	if (c.g > 255)
+		c.g = 255;
+	if (c.g > 255)
+		c.b = 255;
+	return (c);
+}
+
 t_vect	vector_project(t_vect a, t_vect b)
 {
-	t_vect	project;
 	double	dota;
+	t_vect	project;
 
 	dota = dot(a, b) / dot(b, b);
 	project = v_scal_mult(b, dota);

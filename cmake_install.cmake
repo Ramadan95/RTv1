@@ -1,8 +1,8 @@
-# Install script for directory: /Users/cfahey/Desktop/RTv1-master
+# Install script for directory: /Users/kkuvalis/Desktop/aaa
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/cfahey/.brew")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/cfahey/Desktop/RTv1-master/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kkuvalis/Desktop/aaa/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

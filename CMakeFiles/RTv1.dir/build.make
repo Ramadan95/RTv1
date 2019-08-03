@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cfahey/Desktop/RTv1-master
+CMAKE_SOURCE_DIR = /Users/kkuvalis/Desktop/aaa
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cfahey/Desktop/RTv1-master
+CMAKE_BINARY_DIR = /Users/kkuvalis/Desktop/aaa
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RTv1.dir/depend.make
@@ -59,419 +59,445 @@ include CMakeFiles/RTv1.dir/flags.make
 
 CMakeFiles/RTv1.dir/rtv1.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/rtv1.c.o: rtv1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RTv1.dir/rtv1.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/rtv1.c.o   -c /Users/cfahey/Desktop/RTv1-master/rtv1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RTv1.dir/rtv1.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/rtv1.c.o   -c /Users/kkuvalis/Desktop/aaa/rtv1.c
 
 CMakeFiles/RTv1.dir/rtv1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/rtv1.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/rtv1.c > CMakeFiles/RTv1.dir/rtv1.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/rtv1.c > CMakeFiles/RTv1.dir/rtv1.c.i
 
 CMakeFiles/RTv1.dir/rtv1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/rtv1.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/rtv1.c -o CMakeFiles/RTv1.dir/rtv1.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/rtv1.c -o CMakeFiles/RTv1.dir/rtv1.c.s
 
 CMakeFiles/RTv1.dir/vector_utils.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/vector_utils.c.o: vector_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RTv1.dir/vector_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/vector_utils.c.o   -c /Users/cfahey/Desktop/RTv1-master/vector_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RTv1.dir/vector_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/vector_utils.c.o   -c /Users/kkuvalis/Desktop/aaa/vector_utils.c
 
 CMakeFiles/RTv1.dir/vector_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/vector_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/vector_utils.c > CMakeFiles/RTv1.dir/vector_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/vector_utils.c > CMakeFiles/RTv1.dir/vector_utils.c.i
 
 CMakeFiles/RTv1.dir/vector_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/vector_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/vector_utils.c -o CMakeFiles/RTv1.dir/vector_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/vector_utils.c -o CMakeFiles/RTv1.dir/vector_utils.c.s
 
 CMakeFiles/RTv1.dir/vector_scal.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/vector_scal.c.o: vector_scal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RTv1.dir/vector_scal.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/vector_scal.c.o   -c /Users/cfahey/Desktop/RTv1-master/vector_scal.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/RTv1.dir/vector_scal.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/vector_scal.c.o   -c /Users/kkuvalis/Desktop/aaa/vector_scal.c
 
 CMakeFiles/RTv1.dir/vector_scal.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/vector_scal.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/vector_scal.c > CMakeFiles/RTv1.dir/vector_scal.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/vector_scal.c > CMakeFiles/RTv1.dir/vector_scal.c.i
 
 CMakeFiles/RTv1.dir/vector_scal.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/vector_scal.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/vector_scal.c -o CMakeFiles/RTv1.dir/vector_scal.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/vector_scal.c -o CMakeFiles/RTv1.dir/vector_scal.c.s
 
 CMakeFiles/RTv1.dir/atof.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/atof.c.o: atof.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RTv1.dir/atof.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/atof.c.o   -c /Users/cfahey/Desktop/RTv1-master/atof.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RTv1.dir/atof.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/atof.c.o   -c /Users/kkuvalis/Desktop/aaa/atof.c
 
 CMakeFiles/RTv1.dir/atof.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/atof.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/atof.c > CMakeFiles/RTv1.dir/atof.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/atof.c > CMakeFiles/RTv1.dir/atof.c.i
 
 CMakeFiles/RTv1.dir/atof.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/atof.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/atof.c -o CMakeFiles/RTv1.dir/atof.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/atof.c -o CMakeFiles/RTv1.dir/atof.c.s
+
+CMakeFiles/RTv1.dir/check_intersect.c.o: CMakeFiles/RTv1.dir/flags.make
+CMakeFiles/RTv1.dir/check_intersect.c.o: check_intersect.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RTv1.dir/check_intersect.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/check_intersect.c.o   -c /Users/kkuvalis/Desktop/aaa/check_intersect.c
+
+CMakeFiles/RTv1.dir/check_intersect.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/check_intersect.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/check_intersect.c > CMakeFiles/RTv1.dir/check_intersect.c.i
+
+CMakeFiles/RTv1.dir/check_intersect.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/check_intersect.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/check_intersect.c -o CMakeFiles/RTv1.dir/check_intersect.c.s
 
 CMakeFiles/RTv1.dir/read_scene1.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/read_scene1.c.o: read_scene1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RTv1.dir/read_scene1.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/read_scene1.c.o   -c /Users/cfahey/Desktop/RTv1-master/read_scene1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RTv1.dir/read_scene1.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/read_scene1.c.o   -c /Users/kkuvalis/Desktop/aaa/read_scene1.c
 
 CMakeFiles/RTv1.dir/read_scene1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/read_scene1.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/read_scene1.c > CMakeFiles/RTv1.dir/read_scene1.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/read_scene1.c > CMakeFiles/RTv1.dir/read_scene1.c.i
 
 CMakeFiles/RTv1.dir/read_scene1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/read_scene1.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/read_scene1.c -o CMakeFiles/RTv1.dir/read_scene1.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/read_scene1.c -o CMakeFiles/RTv1.dir/read_scene1.c.s
 
 CMakeFiles/RTv1.dir/read_scene2.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/read_scene2.c.o: read_scene2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RTv1.dir/read_scene2.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/read_scene2.c.o   -c /Users/cfahey/Desktop/RTv1-master/read_scene2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RTv1.dir/read_scene2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/read_scene2.c.o   -c /Users/kkuvalis/Desktop/aaa/read_scene2.c
 
 CMakeFiles/RTv1.dir/read_scene2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/read_scene2.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/read_scene2.c > CMakeFiles/RTv1.dir/read_scene2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/read_scene2.c > CMakeFiles/RTv1.dir/read_scene2.c.i
 
 CMakeFiles/RTv1.dir/read_scene2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/read_scene2.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/read_scene2.c -o CMakeFiles/RTv1.dir/read_scene2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/read_scene2.c -o CMakeFiles/RTv1.dir/read_scene2.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o: gnl/libft/ft_strchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strchr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strchr.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strchr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strchr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strchr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strchr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o: gnl/libft/ft_putendl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putendl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putendl.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putendl.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putendl.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putendl.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putendl.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putendl.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o: gnl/libft/ft_strstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strstr.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strstr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strstr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strstr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strstr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.s
 
 CMakeFiles/RTv1.dir/gnl/get_next_line.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/get_next_line.c.o: gnl/get_next_line.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/RTv1.dir/gnl/get_next_line.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/get_next_line.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/get_next_line.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/RTv1.dir/gnl/get_next_line.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/get_next_line.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/get_next_line.c
 
 CMakeFiles/RTv1.dir/gnl/get_next_line.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/get_next_line.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/get_next_line.c > CMakeFiles/RTv1.dir/gnl/get_next_line.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/get_next_line.c > CMakeFiles/RTv1.dir/gnl/get_next_line.c.i
 
 CMakeFiles/RTv1.dir/gnl/get_next_line.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/get_next_line.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/get_next_line.c -o CMakeFiles/RTv1.dir/gnl/get_next_line.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/get_next_line.c -o CMakeFiles/RTv1.dir/gnl/get_next_line.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o: gnl/libft/ft_joincatfree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_joincatfree.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_joincatfree.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_joincatfree.c > CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_joincatfree.c > CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_joincatfree.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_joincatfree.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_joincatfree.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o: gnl/libft/ft_strdup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdup.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdup.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdup.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdup.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdup.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdup.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdup.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o: gnl/libft/ft_strncpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strncpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strncpy.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strncpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strncpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strncpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strncpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strncpy.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o: gnl/libft/ft_strnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strnew.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strnew.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strnew.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strnew.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strnew.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strnew.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o: gnl/libft/ft_strlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strlen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strlen.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strlen.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strlen.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strlen.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strlen.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strlen.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o: gnl/libft/ft_strcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcpy.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcpy.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o: gnl/libft/ft_putstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putstr.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putstr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putstr.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putstr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putstr.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putstr.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o: gnl/libft/ft_strcmp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcmp.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcmp.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcmp.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcmp.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcmp.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcmp.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcmp.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o: gnl/libft/ft_strdel.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdel.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdel.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdel.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdel.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strdel.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdel.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strdel.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o: gnl/libft/ft_putchar.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putchar.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putchar.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putchar.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putchar.c > CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_putchar.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putchar.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_putchar.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o: gnl/libft/ft_memcpy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_memcpy.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_memcpy.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_memcpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_memcpy.c > CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_memcpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_memcpy.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_memcpy.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o: gnl/libft/ft_lstnew.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstnew.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstnew.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstnew.c > CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstnew.c > CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstnew.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstnew.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstnew.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o: gnl/libft/ft_atoi.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_atoi.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_atoi.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_atoi.c > CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_atoi.c > CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_atoi.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_atoi.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_atoi.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o: gnl/libft/ft_isdigit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_isdigit.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_isdigit.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_isdigit.c > CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_isdigit.c > CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_isdigit.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_isdigit.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_isdigit.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o: gnl/libft/ft_lstadd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstadd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstadd.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstadd.c > CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstadd.c > CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_lstadd.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstadd.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_lstadd.c.s
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o: gnl/libft/ft_strcat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o   -c /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.o   -c /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcat.c
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcat.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcat.c > CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.i
 
 CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/gnl/libft/ft_strcat.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcat.c -o CMakeFiles/RTv1.dir/gnl/libft/ft_strcat.c.s
 
 CMakeFiles/RTv1.dir/source.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/source.c.o: source.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/RTv1.dir/source.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/source.c.o   -c /Users/cfahey/Desktop/RTv1-master/source.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/RTv1.dir/source.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/source.c.o   -c /Users/kkuvalis/Desktop/aaa/source.c
 
 CMakeFiles/RTv1.dir/source.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/source.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/source.c > CMakeFiles/RTv1.dir/source.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/source.c > CMakeFiles/RTv1.dir/source.c.i
 
 CMakeFiles/RTv1.dir/source.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/source.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/source.c -o CMakeFiles/RTv1.dir/source.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/source.c -o CMakeFiles/RTv1.dir/source.c.s
 
 CMakeFiles/RTv1.dir/init.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/init.c.o: init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/RTv1.dir/init.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/init.c.o   -c /Users/cfahey/Desktop/RTv1-master/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/RTv1.dir/init.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/init.c.o   -c /Users/kkuvalis/Desktop/aaa/init.c
 
 CMakeFiles/RTv1.dir/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/init.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/init.c > CMakeFiles/RTv1.dir/init.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/init.c > CMakeFiles/RTv1.dir/init.c.i
 
 CMakeFiles/RTv1.dir/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/init.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/init.c -o CMakeFiles/RTv1.dir/init.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/init.c -o CMakeFiles/RTv1.dir/init.c.s
 
 CMakeFiles/RTv1.dir/help_utils.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/help_utils.c.o: help_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/RTv1.dir/help_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/help_utils.c.o   -c /Users/cfahey/Desktop/RTv1-master/help_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/RTv1.dir/help_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/help_utils.c.o   -c /Users/kkuvalis/Desktop/aaa/help_utils.c
 
 CMakeFiles/RTv1.dir/help_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/help_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/help_utils.c > CMakeFiles/RTv1.dir/help_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/help_utils.c > CMakeFiles/RTv1.dir/help_utils.c.i
 
 CMakeFiles/RTv1.dir/help_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/help_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/help_utils.c -o CMakeFiles/RTv1.dir/help_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/help_utils.c -o CMakeFiles/RTv1.dir/help_utils.c.s
 
 CMakeFiles/RTv1.dir/sdl_utils.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/sdl_utils.c.o: sdl_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/RTv1.dir/sdl_utils.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/sdl_utils.c.o   -c /Users/cfahey/Desktop/RTv1-master/sdl_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/RTv1.dir/sdl_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/sdl_utils.c.o   -c /Users/kkuvalis/Desktop/aaa/sdl_utils.c
 
 CMakeFiles/RTv1.dir/sdl_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/sdl_utils.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/sdl_utils.c > CMakeFiles/RTv1.dir/sdl_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/sdl_utils.c > CMakeFiles/RTv1.dir/sdl_utils.c.i
 
 CMakeFiles/RTv1.dir/sdl_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/sdl_utils.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/sdl_utils.c -o CMakeFiles/RTv1.dir/sdl_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/sdl_utils.c -o CMakeFiles/RTv1.dir/sdl_utils.c.s
 
 CMakeFiles/RTv1.dir/intesect.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/intesect.c.o: intesect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/RTv1.dir/intesect.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/intesect.c.o   -c /Users/cfahey/Desktop/RTv1-master/intesect.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/RTv1.dir/intesect.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/intesect.c.o   -c /Users/kkuvalis/Desktop/aaa/intesect.c
 
 CMakeFiles/RTv1.dir/intesect.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/intesect.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/intesect.c > CMakeFiles/RTv1.dir/intesect.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/intesect.c > CMakeFiles/RTv1.dir/intesect.c.i
 
 CMakeFiles/RTv1.dir/intesect.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/intesect.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/intesect.c -o CMakeFiles/RTv1.dir/intesect.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/intesect.c -o CMakeFiles/RTv1.dir/intesect.c.s
 
 CMakeFiles/RTv1.dir/ray.c.o: CMakeFiles/RTv1.dir/flags.make
 CMakeFiles/RTv1.dir/ray.c.o: ray.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/RTv1.dir/ray.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/ray.c.o   -c /Users/cfahey/Desktop/RTv1-master/ray.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/RTv1.dir/ray.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/ray.c.o   -c /Users/kkuvalis/Desktop/aaa/ray.c
 
 CMakeFiles/RTv1.dir/ray.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/ray.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cfahey/Desktop/RTv1-master/ray.c > CMakeFiles/RTv1.dir/ray.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/ray.c > CMakeFiles/RTv1.dir/ray.c.i
 
 CMakeFiles/RTv1.dir/ray.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/ray.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cfahey/Desktop/RTv1-master/ray.c -o CMakeFiles/RTv1.dir/ray.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/ray.c -o CMakeFiles/RTv1.dir/ray.c.s
+
+CMakeFiles/RTv1.dir/help_computelight.c.o: CMakeFiles/RTv1.dir/flags.make
+CMakeFiles/RTv1.dir/help_computelight.c.o: help_computelight.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/RTv1.dir/help_computelight.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RTv1.dir/help_computelight.c.o   -c /Users/kkuvalis/Desktop/aaa/help_computelight.c
+
+CMakeFiles/RTv1.dir/help_computelight.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RTv1.dir/help_computelight.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/kkuvalis/Desktop/aaa/help_computelight.c > CMakeFiles/RTv1.dir/help_computelight.c.i
+
+CMakeFiles/RTv1.dir/help_computelight.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RTv1.dir/help_computelight.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/kkuvalis/Desktop/aaa/help_computelight.c -o CMakeFiles/RTv1.dir/help_computelight.c.s
 
 # Object files for target RTv1
 RTv1_OBJECTS = \
@@ -479,6 +505,7 @@ RTv1_OBJECTS = \
 "CMakeFiles/RTv1.dir/vector_utils.c.o" \
 "CMakeFiles/RTv1.dir/vector_scal.c.o" \
 "CMakeFiles/RTv1.dir/atof.c.o" \
+"CMakeFiles/RTv1.dir/check_intersect.c.o" \
 "CMakeFiles/RTv1.dir/read_scene1.c.o" \
 "CMakeFiles/RTv1.dir/read_scene2.c.o" \
 "CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o" \
@@ -506,7 +533,8 @@ RTv1_OBJECTS = \
 "CMakeFiles/RTv1.dir/help_utils.c.o" \
 "CMakeFiles/RTv1.dir/sdl_utils.c.o" \
 "CMakeFiles/RTv1.dir/intesect.c.o" \
-"CMakeFiles/RTv1.dir/ray.c.o"
+"CMakeFiles/RTv1.dir/ray.c.o" \
+"CMakeFiles/RTv1.dir/help_computelight.c.o"
 
 # External object files for target RTv1
 RTv1_EXTERNAL_OBJECTS =
@@ -515,6 +543,7 @@ RTv1: CMakeFiles/RTv1.dir/rtv1.c.o
 RTv1: CMakeFiles/RTv1.dir/vector_utils.c.o
 RTv1: CMakeFiles/RTv1.dir/vector_scal.c.o
 RTv1: CMakeFiles/RTv1.dir/atof.c.o
+RTv1: CMakeFiles/RTv1.dir/check_intersect.c.o
 RTv1: CMakeFiles/RTv1.dir/read_scene1.c.o
 RTv1: CMakeFiles/RTv1.dir/read_scene2.c.o
 RTv1: CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o
@@ -543,9 +572,10 @@ RTv1: CMakeFiles/RTv1.dir/help_utils.c.o
 RTv1: CMakeFiles/RTv1.dir/sdl_utils.c.o
 RTv1: CMakeFiles/RTv1.dir/intesect.c.o
 RTv1: CMakeFiles/RTv1.dir/ray.c.o
+RTv1: CMakeFiles/RTv1.dir/help_computelight.c.o
 RTv1: CMakeFiles/RTv1.dir/build.make
 RTv1: CMakeFiles/RTv1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cfahey/Desktop/RTv1-master/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking C executable RTv1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kkuvalis/Desktop/aaa/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking C executable RTv1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RTv1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -558,6 +588,6 @@ CMakeFiles/RTv1.dir/clean:
 .PHONY : CMakeFiles/RTv1.dir/clean
 
 CMakeFiles/RTv1.dir/depend:
-	cd /Users/cfahey/Desktop/RTv1-master && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cfahey/Desktop/RTv1-master /Users/cfahey/Desktop/RTv1-master /Users/cfahey/Desktop/RTv1-master /Users/cfahey/Desktop/RTv1-master /Users/cfahey/Desktop/RTv1-master/CMakeFiles/RTv1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/kkuvalis/Desktop/aaa && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/kkuvalis/Desktop/aaa /Users/kkuvalis/Desktop/aaa /Users/kkuvalis/Desktop/aaa /Users/kkuvalis/Desktop/aaa /Users/kkuvalis/Desktop/aaa/CMakeFiles/RTv1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RTv1.dir/depend
 

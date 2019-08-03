@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cfahey/Desktop/RTv1-master
+CMAKE_SOURCE_DIR = /Users/kkuvalis/Desktop/aaa
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cfahey/Desktop/RTv1-master
+CMAKE_BINARY_DIR = /Users/kkuvalis/Desktop/aaa
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/cfahey/Desktop/RTv1-master
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/cfahey/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Users/kkuvalis/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1-master/CMakeFiles /Users/cfahey/Desktop/RTv1-master/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kkuvalis/Desktop/aaa/CMakeFiles /Users/kkuvalis/Desktop/aaa/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cfahey/Desktop/RTv1-master/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kkuvalis/Desktop/aaa/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ atof.s: atof.c.s
 atof.c.s:
 	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/atof.c.s
 .PHONY : atof.c.s
+
+check_intersect.o: check_intersect.c.o
+
+.PHONY : check_intersect.o
+
+# target to build an object file
+check_intersect.c.o:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/check_intersect.c.o
+.PHONY : check_intersect.c.o
+
+check_intersect.i: check_intersect.c.i
+
+.PHONY : check_intersect.i
+
+# target to preprocess a source file
+check_intersect.c.i:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/check_intersect.c.i
+.PHONY : check_intersect.c.i
+
+check_intersect.s: check_intersect.c.s
+
+.PHONY : check_intersect.s
+
+# target to generate assembly for a file
+check_intersect.c.s:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/check_intersect.c.s
+.PHONY : check_intersect.c.s
 
 gnl/get_next_line.o: gnl/get_next_line.c.o
 
@@ -690,6 +717,33 @@ gnl/libft/ft_strstr.c.s:
 	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/gnl/libft/ft_strstr.c.s
 .PHONY : gnl/libft/ft_strstr.c.s
 
+help_computelight.o: help_computelight.c.o
+
+.PHONY : help_computelight.o
+
+# target to build an object file
+help_computelight.c.o:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/help_computelight.c.o
+.PHONY : help_computelight.c.o
+
+help_computelight.i: help_computelight.c.i
+
+.PHONY : help_computelight.i
+
+# target to preprocess a source file
+help_computelight.c.i:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/help_computelight.c.i
+.PHONY : help_computelight.c.i
+
+help_computelight.s: help_computelight.c.s
+
+.PHONY : help_computelight.s
+
+# target to generate assembly for a file
+help_computelight.c.s:
+	$(MAKE) -f CMakeFiles/RTv1.dir/build.make CMakeFiles/RTv1.dir/help_computelight.c.s
+.PHONY : help_computelight.c.s
+
 help_utils.o: help_utils.c.o
 
 .PHONY : help_utils.o
@@ -999,6 +1053,9 @@ help:
 	@echo "... atof.o"
 	@echo "... atof.i"
 	@echo "... atof.s"
+	@echo "... check_intersect.o"
+	@echo "... check_intersect.i"
+	@echo "... check_intersect.s"
 	@echo "... gnl/get_next_line.o"
 	@echo "... gnl/get_next_line.i"
 	@echo "... gnl/get_next_line.s"
@@ -1059,6 +1116,9 @@ help:
 	@echo "... gnl/libft/ft_strstr.o"
 	@echo "... gnl/libft/ft_strstr.i"
 	@echo "... gnl/libft/ft_strstr.s"
+	@echo "... help_computelight.o"
+	@echo "... help_computelight.i"
+	@echo "... help_computelight.s"
 	@echo "... help_utils.o"
 	@echo "... help_utils.i"
 	@echo "... help_utils.s"

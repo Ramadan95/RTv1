@@ -1,14 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_scene1.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cfahey <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/03 10:30:38 by cfahey            #+#    #+#             */
+/*   Updated: 2019/08/03 10:31:26 by cfahey           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "rtv1.h"
 
-void	err_exit(void)
-{
-	ft_putendl("error");
-	exit(-2);
-}
-
-
-t_vect		read_vector(char *str)
+t_vect	read_vector(char *str)
 {
 	t_vect ret;
 
@@ -22,19 +26,19 @@ t_vect		read_vector(char *str)
 	return (ret);
 }
 
-void		new_object(t_rtv1 *rtv1, t_rtv1 **obj, int *i)
+void	new_object(t_rtv1 *rtv1, t_rtv1 **obj, int *i)
 {
 	*i = (*i) + 1;
-	*obj = (t_rtv1 *) &(rtv1->sphere[*i]);
+	*obj = (t_rtv1 *)&(rtv1->sphere[*i]);
 }
 
-static void		new_light(t_rtv1 *rtv1, t_rtv1 **light, int *i)
+void	new_light(t_rtv1 *rtv1, t_rtv1 **light, int *i)
 {
 	*i = (*i) + 1;
-	*light = (t_rtv1 *) &(rtv1->light[*i]);
+	*light = (t_rtv1 *)&(rtv1->light[*i]);
 }
 
-void			read_line_set_scene(char *line, t_rtv1 *rtv1)
+void	read_line_set_scene(char *line, t_rtv1 *rtv1)
 {
 	static int			i = -1;
 	static int			j = -1;
@@ -43,17 +47,17 @@ void			read_line_set_scene(char *line, t_rtv1 *rtv1)
 	static t_rtv1		*camera = NULL;
 
 	if (ft_strstr(line, "camera_init"))
-		camera = camera_init(line, (t_rtv1 *) &(rtv1->camera));
+		camera = camera_init(line, (t_rtv1 *)&(rtv1->camera));
 	if (obj)
-		obj = (t_sphere *) read_obj_parameters(line, (t_rtv1 **) &obj);
+		obj = (t_sphere *)read_obj_parameters(line, (t_rtv1 **)&obj);
 	else if (light)
 		light = read_light_parameters(line, &light);
 	else if (camera)
 		camera = camera_init(line, camera);
 	else if (ft_strstr(line, "new") && ft_strstr(line, "object"))
-		new_object(rtv1, (t_rtv1 **) &obj, &i);
+		new_object(rtv1, (t_rtv1 **)&obj, &i);
 	else if (ft_strstr(line, "new") && ft_strstr(line, "light"))
-		new_light(rtv1, (t_rtv1 **) &light, &j);
+		new_light(rtv1, (t_rtv1 **)&light, &j);
 	else if (!ft_strcmp(line, "end"))
 	{
 		rtv1->objcount = i + 1;
@@ -61,7 +65,7 @@ void			read_line_set_scene(char *line, t_rtv1 *rtv1)
 	}
 }
 
-void			read_scene(t_rtv1 *rtv1, char *file_name)
+void	read_scene(t_rtv1 *rtv1, char *file_name)
 {
 	int		fd;
 	char	*line;

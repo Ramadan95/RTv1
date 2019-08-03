@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intesect.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkuvalis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/03 23:37:05 by kkuvalis          #+#    #+#             */
+/*   Updated: 2019/08/03 23:37:09 by kkuvalis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "rtv1.h"
 
-static double	IntersectRayPlane(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
+double				intersect_ray_plane(t_rtv1 *rtv1, \
+							t_vect start, t_vect dir, int i)
 {
-	double zeroThreshold = 0.0001;
-	double dir_dot_c;
-	double cen_dot_c;
-	double t;
-	t_vect help;
+	double			zero;
+	double			dir_dot_c;
+	double			cen_dot_c;
+	double			t;
+	t_vect			help;
 
+	zero = 0.0001;
 	help = vector_subt(start, rtv1->sphere[i].center);
 	dir_dot_c = dot(dir, rtv1->sphere[i].dir);
 	cen_dot_c = dot(help, rtv1->sphere[i].dir);
@@ -15,70 +29,79 @@ static double	IntersectRayPlane(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
 	(dir_dot_c > 0 && cen_dot_c > 0))
 		return (-1);
 	t = -cen_dot_c / dir_dot_c;
-	return (t > zeroThreshold ? t : -1);
+	return (t > zero ? t : -1);
 }
 
-double IntersectRayCylinder(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
+double				intersect_ray_cylinder(t_rtv1 *rtv1, \
+							t_vect start, t_vect dir, int i)
 {
-	double zeroThreshold = 0.0001;
+	t_inter_cyl		*cyl;
 
+	cyl = malloc(sizeof(t_inter_cyl));
+	cyl->zero = 0.0001;
 	start = vector_subt(start, rtv1->sphere[i].center);
-
-	double dot_start_cyl_dir = dot(start, rtv1->sphere[i].dir);
-	double dot_dir_cyl_dir = dot(dir, rtv1->sphere[i].dir);
-
-	double a = dot(dir, dir) - dot_dir_cyl_dir * dot_dir_cyl_dir;
-	double b = 2 * (dot(dir, start) - dot_dir_cyl_dir * dot_start_cyl_dir);
-	double c = dot(start, start) - dot_start_cyl_dir * dot_start_cyl_dir -
-			rtv1->sphere[i].radius * rtv1->sphere[i].radius;
-	double D = b*b - 4*a*c;
-
-	if ( D < zeroThreshold )
+	cyl->start_dir = dot(start, rtv1->sphere[i].dir);
+	cyl->end_dir = dot(dir, rtv1->sphere[i].dir);
+	cyl->a = dot(dir, dir) - cyl->end_dir * cyl->end_dir;
+	cyl->b = 2 * (dot(dir, start) - cyl->end_dir * cyl->start_dir);
+	cyl->c = dot(start, start) - cyl->start_dir * cyl->start_dir -
+		rtv1->sphere[i].radius * rtv1->sphere[i].radius;
+	cyl->D = cyl->b * cyl->b - 4 * cyl->a * cyl->c;
+	if (cyl->D < cyl->zero)
 		return (-1);
-	double qD = sqrt(D);
-	double t1 = ( -b + qD)/(2*a);
-	double t2 = ( -b - qD)/(2*a);
-	if (t1 <= zeroThreshold)
+	cyl->qD = sqrt(cyl->D);
+	cyl->t1 = (-cyl->b + cyl->qD) / (2 * cyl->a);
+	cyl->t2 = (-cyl->b - cyl->qD) / (2 * cyl->a);
+	if (cyl->t1 <= cyl->zero)
 		return (-1);
-	double t = (t2 > zeroThreshold) ? t2 : t1;
-	return (t);
+	return ((cyl->t2 > cyl->zero) ? cyl->t2 : cyl->t1);
 }
 
-double IntersectRayCone(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
+double				intersect_cone_two(t_inter_cone *cone)
 {
-	double zeroThreshold = 0.0001;
-
-	start = vector_subt(start, rtv1->sphere[i].center);
-	double k = tan(rtv1->sphere[i].angle);
-
-	double dot_start_cone_dir = dot(start, rtv1->sphere[i].dir);
-	double dot_dir_cone_dir = dot(dir, rtv1->sphere[i].dir);
-
-	double a = dot(dir, dir) - (1 + k * k) * dot_dir_cone_dir * dot_dir_cone_dir;
-	double b = 2 * (dot(dir, start) - (1 + k * k) * dot_dir_cone_dir * dot_start_cone_dir);
-	double c = dot(start, start) - (1 + k * k) * dot_start_cone_dir * dot_start_cone_dir;
-	double D = b*b - 4*a*c;
-
-	if ( D < zeroThreshold )
+	if (cone->D < cone->zero)
 		return (-1);
-	double qD = sqrt(D);
-	double t1 = ( -b + qD)/(2*a);
-	double t2 = ( -b - qD)/(2*a);
-
-	if ((t1 <= t2 && t1 >= zeroThreshold) || (t1 >= zeroThreshold && t2 < zeroThreshold))
-		return (t1);
-	if ((t2 <= t1 && t2 >= zeroThreshold) || (t2 >= zeroThreshold && t1 < zeroThreshold))
-		return (t2);
+	cone->qD = sqrt(cone->D);
+	cone->t1 = (-cone->b + cone->qD) / (2 * cone->a);
+	cone->t2 = (-cone->b - cone->qD) / (2 * cone->a);
+	if ((cone->t1 <= cone->t2 && cone->t1 >= cone->zero) || \
+					(cone->t1 >= cone->zero && cone->t2 < cone->zero))
+		return (cone->t1);
+	if ((cone->t2 <= cone->t1 && cone->t2 >= cone->zero) || \
+					(cone->t2 >= cone->zero && cone->t1 < cone->zero))
+		return (cone->t2);
 	return (-1);
 }
 
-double		IntersectRaySphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
+double				intersect_ray_cone(t_rtv1 *rtv1, \
+							t_vect start, t_vect dir, int i)
 {
-	double	r;
-	double	t;
-	double	discriminant;
-	double	t1;
-	double	t2;
+	t_inter_cone	*cone;
+
+	cone = malloc(sizeof(t_inter_cone));
+	cone->zero = 0.0001;
+	start = vector_subt(start, rtv1->sphere[i].center);
+	cone->k = tan(rtv1->sphere[i].angle);
+	cone->start_dir = dot(start, rtv1->sphere[i].dir);
+	cone->end_dir = dot(dir, rtv1->sphere[i].dir);
+	cone->a = dot(dir, dir) - (1 + cone->k * cone->k) * \
+								cone->end_dir * cone->end_dir;
+	cone->b = 2 * (dot(dir, start) - (1 + cone->k * cone->k) * \
+								cone->end_dir * cone->start_dir);
+	cone->c = dot(start, start) - (1 + cone->k * cone->k) * \
+								cone->start_dir * cone->start_dir;
+	cone->D = cone->b * cone->b - 4 * cone->a * cone->c;
+	return (intersect_cone_two(cone));
+}
+
+double				intersect_ray_sphere(t_rtv1 *rtv1, \
+							t_vect start, t_vect dir, int i)
+{
+	double			r;
+	double			t;
+	double			discriminant;
+	double			t1;
+	double			t2;
 
 	r = rtv1->sphere[i].radius;
 	start = vector_subt(start, rtv1->sphere[i].center);
@@ -94,17 +117,4 @@ double		IntersectRaySphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
 		return (-1);
 	t = (t2 > 0) ? t2 : t1;
 	return (t);
-}
-
-double  IntersectRayObject(t_rtv1 *rtv1, t_vect start, t_vect dir, int i)
-{
-	if (rtv1->sphere[i].type == sphere)
-		return (IntersectRaySphere(rtv1, start, dir, i));
-	else if (rtv1->sphere[i].type == cone)
-		return (IntersectRayCone(rtv1, start, dir, i));
-	else if (rtv1->sphere[i].type == cylinder)
-		return (IntersectRayCylinder(rtv1, start, dir, i));
-	else if (rtv1->sphere[i].type == plane)
-		return (IntersectRayPlane(rtv1, start, dir, i));
-	return (0);
 }

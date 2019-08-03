@@ -16,7 +16,7 @@ t_vect	norm(t_vect v)
 {
 	double	n;
 
-	n = sqrt(defpow(v.x) + defpow(v.y) + defpow(v.z));
+	n = sqrt(POWER(v.x) + POWER(v.y) + POWER(v.z));
 	v.x = v.x / n;
 	v.y = v.y / n;
 	v.z = v.z / n;

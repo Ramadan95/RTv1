@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RTv1.dir/vector_utils.c.o"
   "CMakeFiles/RTv1.dir/vector_scal.c.o"
   "CMakeFiles/RTv1.dir/atof.c.o"
+  "CMakeFiles/RTv1.dir/check_intersect.c.o"
   "CMakeFiles/RTv1.dir/read_scene1.c.o"
   "CMakeFiles/RTv1.dir/read_scene2.c.o"
   "CMakeFiles/RTv1.dir/gnl/libft/ft_strchr.c.o"
@@ -31,6 +32,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/RTv1.dir/sdl_utils.c.o"
   "CMakeFiles/RTv1.dir/intesect.c.o"
   "CMakeFiles/RTv1.dir/ray.c.o"
+  "CMakeFiles/RTv1.dir/help_computelight.c.o"
   "RTv1.pdb"
   "RTv1"
 )

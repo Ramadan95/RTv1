@@ -1,4 +1,0 @@
-Cannot generate into /Users/cfahey/Desktop/Rtv1
-It is already used for project /Users/cfahey/Desktop/RTv1-master
-
-Please either delete it manually or select another generation directory

@@ -23,7 +23,7 @@ int		get_closest_object(t_vect start, t_vect dir, \
 	sphere_i = -1;
 	while (i < rtv1->objcount)
 	{
-		b = IntersectRayObject(rtv1, start, dir, i);
+		b = intersect_ray_object(rtv1, start, dir, i);
 		if (b < *closest && b != -1)
 		{
 			*closest = b;
@@ -46,7 +46,13 @@ void	put_point(int x, int y, unsigned char *map, t_color rgb)
 
 void	canvas_to_viewport(t_rtv1 *rtv1, double x, double y)
 {
-	rtv1->d.x = x * Vw / WIDTH;
-	rtv1->d.y = y * Vh / HEIGHT;
+	rtv1->d.x = x * VW / WIDTH;
+	rtv1->d.y = y * VH / HEIGHT;
 	rtv1->d.z = 1.0;
+}
+
+void	err_exit(void)
+{
+	ft_putendl("error");
+	exit(-2);
 }

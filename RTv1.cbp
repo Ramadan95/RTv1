@@ -8,44 +8,44 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/kkuvalis/Desktop/aaa"/>
+				<Option working_dir="/Users/cfahey/Desktop/RTv1"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/kkuvalis/Desktop/aaa"/>
+				<Option working_dir="/Users/cfahey/Desktop/RTv1"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/kkuvalis/Desktop/aaa"/>
+				<Option working_dir="/Users/cfahey/Desktop/RTv1"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="RTv1">
-				<Option output="/Users/kkuvalis/Desktop/aaa/RTv1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kkuvalis/Desktop/aaa"/>
+				<Option output="/Users/cfahey/Desktop/RTv1/RTv1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cfahey/Desktop/RTv1"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/kkuvalis/Desktop/aaa/gnl"/>
-					<Add directory="/Users/kkuvalis/Desktop/aaa/gnl/libft"/>
+					<Add directory="/Users/cfahey/Desktop/RTv1/gnl"/>
+					<Add directory="/Users/cfahey/Desktop/RTv1/gnl/libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -54,21 +54,21 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 RTv1"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 RTv1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="RTv1/fast">
-				<Option output="/Users/kkuvalis/Desktop/aaa/RTv1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/kkuvalis/Desktop/aaa"/>
+				<Option output="/Users/cfahey/Desktop/RTv1/RTv1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/cfahey/Desktop/RTv1"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/kkuvalis/Desktop/aaa/gnl"/>
-					<Add directory="/Users/kkuvalis/Desktop/aaa/gnl/libft"/>
+					<Add directory="/Users/cfahey/Desktop/RTv1/gnl"/>
+					<Add directory="/Users/cfahey/Desktop/RTv1/gnl/libft"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -77,122 +77,122 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 RTv1/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/kkuvalis/Desktop/aaa/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 RTv1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/cfahey/Desktop/RTv1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/atof.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/atof.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/check_intersect.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/check_intersect.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/get_next_line.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/get_next_line.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/get_next_line.h">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/get_next_line.h">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_atoi.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_atoi.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_isdigit.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_isdigit.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_joincatfree.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_joincatfree.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstadd.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_lstadd.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_lstnew.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_lstnew.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_memcpy.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_memcpy.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putchar.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_putchar.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putendl.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_putendl.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_putstr.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_putstr.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcat.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strcat.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strchr.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strchr.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcmp.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strcmp.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strcpy.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strcpy.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdel.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strdel.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strdup.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strdup.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strlen.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strlen.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strncpy.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strncpy.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strnew.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strnew.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/gnl/libft/ft_strstr.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/gnl/libft/ft_strstr.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/help_computelight.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/help_computelight.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/help_utils.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/help_utils.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/init.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/init.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/intesect.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/intesect.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/ray.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/ray.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/read_scene1.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/read_scene1.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/read_scene2.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/read_scene2.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/rtv1.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/rtv1.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/rtv1.h">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/rtv1.h">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/sdl_utils.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/sdl_utils.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/source.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/source.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/vector_scal.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/vector_scal.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/vector_utils.c">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/vector_utils.c">
 			<Option target="RTv1"/>
 		</Unit>
-		<Unit filename="/Users/kkuvalis/Desktop/aaa/CMakeLists.txt">
+		<Unit filename="/Users/cfahey/Desktop/RTv1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

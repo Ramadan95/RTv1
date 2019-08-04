@@ -37,7 +37,11 @@ double				intersect_ray_cylinder(t_rtv1 *rtv1, \
 {
 	t_inter_cyl		*cyl;
 
-	cyl = malloc(sizeof(t_inter_cyl));
+	if (!(cyl = malloc(sizeof(t_inter_cyl))))
+	{
+		ft_putendl("failed to allocate memory");
+		err_exit();
+	}
 	cyl->zero = 0.0001;
 	start = vector_subt(start, rtv1->sphere[i].center);
 	cyl->start_dir = dot(start, rtv1->sphere[i].dir);
@@ -46,12 +50,12 @@ double				intersect_ray_cylinder(t_rtv1 *rtv1, \
 	cyl->b = 2 * (dot(dir, start) - cyl->end_dir * cyl->start_dir);
 	cyl->c = dot(start, start) - cyl->start_dir * cyl->start_dir -
 		rtv1->sphere[i].radius * rtv1->sphere[i].radius;
-	cyl->D = cyl->b * cyl->b - 4 * cyl->a * cyl->c;
-	if (cyl->D < cyl->zero)
+	cyl->d = cyl->b * cyl->b - 4 * cyl->a * cyl->c;
+	if (cyl->d < cyl->zero)
 		return (-1);
-	cyl->qD = sqrt(cyl->D);
-	cyl->t1 = (-cyl->b + cyl->qD) / (2 * cyl->a);
-	cyl->t2 = (-cyl->b - cyl->qD) / (2 * cyl->a);
+	cyl->qd = sqrt(cyl->d);
+	cyl->t1 = (-cyl->b + cyl->qd) / (2 * cyl->a);
+	cyl->t2 = (-cyl->b - cyl->qd) / (2 * cyl->a);
 	if (cyl->t1 <= cyl->zero)
 		return (-1);
 	return ((cyl->t2 > cyl->zero) ? cyl->t2 : cyl->t1);
@@ -59,11 +63,11 @@ double				intersect_ray_cylinder(t_rtv1 *rtv1, \
 
 double				intersect_cone_two(t_inter_cone *cone)
 {
-	if (cone->D < cone->zero)
+	if (cone->d < cone->zero)
 		return (-1);
-	cone->qD = sqrt(cone->D);
-	cone->t1 = (-cone->b + cone->qD) / (2 * cone->a);
-	cone->t2 = (-cone->b - cone->qD) / (2 * cone->a);
+	cone->qd = sqrt(cone->d);
+	cone->t1 = (-cone->b + cone->qd) / (2 * cone->a);
+	cone->t2 = (-cone->b - cone->qd) / (2 * cone->a);
 	if ((cone->t1 <= cone->t2 && cone->t1 >= cone->zero) || \
 					(cone->t1 >= cone->zero && cone->t2 < cone->zero))
 		return (cone->t1);
@@ -78,7 +82,11 @@ double				intersect_ray_cone(t_rtv1 *rtv1, \
 {
 	t_inter_cone	*cone;
 
-	cone = malloc(sizeof(t_inter_cone));
+	if (!(cone = malloc(sizeof(t_inter_cone))))
+	{
+		ft_putendl("failed to allocate memory");
+		err_exit();
+	}
 	cone->zero = 0.0001;
 	start = vector_subt(start, rtv1->sphere[i].center);
 	cone->k = tan(rtv1->sphere[i].angle);
@@ -90,7 +98,7 @@ double				intersect_ray_cone(t_rtv1 *rtv1, \
 								cone->end_dir * cone->start_dir);
 	cone->c = dot(start, start) - (1 + cone->k * cone->k) * \
 								cone->start_dir * cone->start_dir;
-	cone->D = cone->b * cone->b - 4 * cone->a * cone->c;
+	cone->d = cone->b * cone->b - 4 * cone->a * cone->c;
 	return (intersect_cone_two(cone));
 }
 

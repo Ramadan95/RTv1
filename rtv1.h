@@ -120,8 +120,8 @@ typedef	struct		s_inter_cyl
 	double a;
 	double b;
 	double c;
-	double D;
-	double qD;
+	double d;
+	double qd;
 	double t1;
 	double t2;
 }					t_inter_cyl;
@@ -134,8 +134,8 @@ typedef	struct		s_inter_cone
 	double a;
 	double b;
 	double c;
-	double D;
-	double qD;
+	double d;
+	double qd;
 	double t1;
 	double t2;
 	double k;
@@ -173,9 +173,9 @@ typedef struct		s_rtv1
 
 t_color				trace_ray(t_rtv1 *rtv1, t_vect o, t_vect d, double depth);
 int					get_closest_object(t_vect start, t_vect dir,
-					double *closest, t_rtv1 *rtv1);
+						double *closest, t_rtv1 *rtv1);
 double				intersect_ray_object(t_rtv1 *rtv1,
-					t_vect start, t_vect dir, int i);
+						t_vect start, t_vect dir, int i);
 void				put_point(int x, int y, unsigned char *map, t_color rgb);
 void				canvas_to_viewport(t_rtv1 *rtv1, double x, double y);
 void				read_scene(t_rtv1 *rtv1, char *file_name);
@@ -205,14 +205,19 @@ void				sdl_reinit(t_sdl *sdl);
 void				sdl_run(t_sdl *sdl, t_rtv1 *rtv1);
 void				sdl_keydown(t_rtv1 *rtv1, t_sdl *sdl, int *quit);
 void				err_exit(void);
-double				intersect_ray_sphere(t_rtv1 *rtv1, t_vect start, t_vect dir, int i);
-double				intersect_ray_cone(t_rtv1 *rtv1, t_vect start, t_vect dir, int i);
+double				intersect_ray_sphere(t_rtv1 *rtv1,
+						t_vect start, t_vect dir, int i);
+double				intersect_ray_cone(t_rtv1 *rtv1,
+						t_vect start, t_vect dir, int i);
 double				intersect_cone_two(t_inter_cone *cone);
-double				intersect_ray_cylinder(t_rtv1 *rtv1, t_vect start, t_vect dir, int i);
-double				intersect_ray_plane(t_rtv1 *rtv1, t_vect start, t_vect dir, int i);
+double				intersect_ray_cylinder(t_rtv1 *rtv1,
+						t_vect start, t_vect dir, int i);
+double				intersect_ray_plane(t_rtv1 *rtv1,
+						t_vect start, t_vect dir, int i);
 void				compute_light2(t_rtv1 *rtv1, t_cl *cl, t_vect p, t_vect l);
 void				compute_light1(t_rtv1 *rtv1, t_cl *cl);
 double				check_ambient(t_rtv1 *rtv1, t_cl *cl);
-t_vect				point_and_directional(t_rtv1 *rtv1, t_cl *cl, t_vect p, t_vect l);
+t_vect				point_and_directional(t_rtv1 *rtv1,
+						t_cl *cl, t_vect p, t_vect l);
 
 #endif

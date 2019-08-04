@@ -46,7 +46,8 @@ double	compute_lightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 	t_vect	r;
 	t_cl	*cl;
 
-	cl = (t_cl *)malloc(sizeof(t_cl));
+	if (!(cl = (t_cl *)malloc(sizeof(t_cl))))
+		err_exit();
 	init_cl_and_l(cl, l);
 	while (cl->i < rtv1->lightcount)
 	{
@@ -71,7 +72,8 @@ t_color	trace_ray(t_rtv1 *rtv1, t_vect o, t_vect d, double depth)
 {
 	t_helptrace *t;
 
-	t = malloc(sizeof(t_helptrace));
+	if (!(t = malloc(sizeof(t_helptrace))))
+		err_exit();
 	rtv1->tr.closest = 99999999.0;
 	rtv1->tr.sphere_i = get_closest_object(o, d, &rtv1->tr.closest, rtv1);
 	if (rtv1->tr.sphere_i != -1)

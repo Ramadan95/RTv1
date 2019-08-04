@@ -47,7 +47,7 @@ void	read_line_set_scene(char *line, t_rtv1 *rtv1)
 	static t_rtv1		*camera = NULL;
 
 	if (ft_strstr(line, "camera_init"))
-		camera = camera_init(line, (t_rtv1 *)&(rtv1->camera));
+		camera = camera_init(line, rtv1);
 	if (obj)
 		obj = (t_sphere *)read_obj_parameters(line, (t_rtv1 **)&obj);
 	else if (light)

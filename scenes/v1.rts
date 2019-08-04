@@ -8,46 +8,46 @@ new object
     type = sphere;
     position = (0, 3.0, 3.0)
     radius = 1.0
-    color = 16711680
+    color = 1254865
     specular = 500.0
-    reflective = 0.0
+    reflective = 0.2
 }
 new object
 {
     type = sphere;
     position = (2, 0.0, 4.0)
     radius = 1.0
-    color = 65280
+    color = 6282670
     specular = 5.0
-    reflective = 0.0
+    reflective = 0.1
 }
 new object
 {
     type = sphere;
     position = (-2, 0.0, 4.0)
     radius = 1.0
-    color = 643580
+    color = 13714165
     specular = 500.0
-    reflective = 0.0
+    reflective = 0.2
 }
 new object
 {
     type = sphere;
     position = (0, -51, 0.0)
     radius = 50.0
-    color = 643450
+    color = 0
     specular = 10.0
-    reflective = 0.0
+    reflective = 0.3
 }
 new object
 {
     type = cone
     angle = 0.2
     direction = (1.0, 1.0, 0.0)
-    position = (2.0, 0.0, 10.0)
-    color = 16776960
-    specular = 10.0
-    reflective = 0.0
+    position = (2.0, 0.0, 7.0)
+    color = 3342935
+    specular = 400.0
+    reflective = 0.5
 }
 new object
 {
@@ -55,16 +55,16 @@ new object
     radius = 1.0
     direction = (0.0, 1.0, 0.0)
     position = (-2.0, 4.0, 6.0)
-    color = 65280
+    color = 16711680
     specular = 0.0
-    reflective = 0.0
+    reflective = 0.4
 }
 new object
 {
     type = plane;
     position = (2.0, 0.0, 12.0)
     direction = (0.0, 0.0, 1.0)
-    color = 54654865
+    color = 255255255
     specular = 2.0
     reflective = 0.3
 }

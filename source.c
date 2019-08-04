@@ -6,7 +6,7 @@
 /*   By: cfahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 05:23:46 by cfahey            #+#    #+#             */
-/*   Updated: 2019/08/03 05:23:47 by cfahey           ###   ########.fr       */
+/*   Updated: 2019/08/04 16:23:56 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_vect	get_normal(t_rtv1 *rtv1, t_vect p, int i)
 	t_vect project;
 	double k;
 
+	ret = vec(0, 0, 0);
 	if (rtv1->sphere[i].type == sphere)
 		ret = vector_subt(p, rtv1->sphere[i].center);
 	else if (rtv1->sphere[i].type == cone)

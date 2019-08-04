@@ -6,7 +6,7 @@
 /*   By: cfahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 07:02:20 by cfahey            #+#    #+#             */
-/*   Updated: 2019/08/03 07:02:21 by cfahey           ###   ########.fr       */
+/*   Updated: 2019/08/04 17:03:37 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_rtv1	*camera_init(char *line, t_rtv1 *rtv1)
 
 void	scene_init(t_rtv1 *rtv1, char *number)
 {
-	char file_name[100];
+	char file_name[15];
 
 	if (!ft_strcmp(number, "1"))
 		ft_strcpy(file_name, "scenes/v1.rts");

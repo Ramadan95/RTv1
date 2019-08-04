@@ -6,7 +6,7 @@
 /*   By: cfahey <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 10:38:58 by cfahey            #+#    #+#             */
-/*   Updated: 2019/08/03 10:39:00 by cfahey           ###   ########.fr       */
+/*   Updated: 2019/08/04 17:04:07 by cfahey           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,8 +152,8 @@ typedef	struct		s_helptrace
 
 typedef struct		s_rtv1
 {
-	t_sphere		sphere[100];
-	t_light			light[100];
+	t_sphere		sphere[10];
+	t_light			light[10];
 	t_tr			tr;
 	t_camera		camera;
 	double			a;

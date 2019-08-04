@@ -25,12 +25,12 @@ void	cp(t_rtv1 *rtv1, t_cl *cl, t_vect *r, const double *s)
 		(pow(cl->r_dot / (len_r * len_v), *s));
 }
 
-void	init_cl_and_l(t_cl *cl, t_vect l)
+void	init_cl_and_l(t_cl *cl, t_vect *l)
 {
 	cl->closest = 99999999.9;
 	cl->i = 0;
 	cl->intens = 0.0;
-	l = (t_vect){255, 255, 255};
+	*l = (t_vect){255, 255, 255};
 }
 
 void	init_cl_other(t_cl *cl, t_vect l, t_vect n)
@@ -48,7 +48,7 @@ double	compute_lightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 
 	if (!(cl = (t_cl *)malloc(sizeof(t_cl))))
 		err_exit();
-	init_cl_and_l(cl, l);
+	init_cl_and_l(cl, &l);
 	while (cl->i < rtv1->lightcount)
 	{
 		if (check_ambient(rtv1, cl))
@@ -70,29 +70,29 @@ double	compute_lightning(t_rtv1 *rtv1, t_vect p, t_vect n, double s)
 
 t_color	trace_ray(t_rtv1 *rtv1, t_vect o, t_vect d, double depth)
 {
-	t_helptrace *t;
+	t_helptrace	*t;
+	int			sphere_i;
+	double		closest;
+	double		r;
 
+	closest = 99999999.0;
 	if (!(t = malloc(sizeof(t_helptrace))))
 		err_exit();
-	rtv1->tr.closest = 99999999.0;
-	rtv1->tr.sphere_i = get_closest_object(o, d, &rtv1->tr.closest, rtv1);
-	if (rtv1->tr.sphere_i != -1)
+	sphere_i = get_closest_object(o, d, &closest, rtv1);
+	if (sphere_i != -1)
 	{
-		t->p = vector_sum(o, v_scal_mult(d, rtv1->tr.closest));
-		t->n = get_normal(rtv1, t->p, rtv1->tr.sphere_i);
+		t->p = vector_sum(o, v_scal_mult(d, closest));
+		t->n = get_normal(rtv1, t->p, sphere_i);
 		if (dot(t->n, d) > 0)
 			t->n = v_scal_mult(t->n, -1);
-		t->ret = rtv1->sphere[rtv1->tr.sphere_i].rgb;
-		t->ret = recalc_rgb(t->ret, compute_lightning(rtv1,
-				t->p, t->n, rtv1->sphere[rtv1->tr.sphere_i].specular));
-		rtv1->tr.r = rtv1->sphere[rtv1->tr.sphere_i].reflect;
-		if (depth <= 0 || rtv1->tr.r <= 0)
+		tr(rtv1, t, sphere_i, &r);
+		if (depth <= 0 || r <= 0)
 			return (t->ret);
 		t->ray = reflect_ray(t->n, v_scal_mult(d, -1));
 		t->colref = trace_ray(rtv1, t->p, t->ray, depth - 1);
-		return (color_sum(recalc_rgb(t->ret, 1 - rtv1->tr.r),
-				recalc_rgb(t->colref, rtv1->tr.r)));
+		return (color_sum(recalc_rgb(t->ret, 1 - r),
+				recalc_rgb(t->colref, r)));
 	}
 	else
-		return ((t_color){0, 0, 0});
+		return ((t_color) {0, 0, 0});
 }

@@ -45,3 +45,11 @@ t_vect	point_and_directional(t_rtv1 *rtv1, t_cl *cl, t_vect p, t_vect l)
 		l = rtv1->light[cl->i].direction;
 	return (l);
 }
+
+void	tr(t_rtv1 *rtv1, t_helptrace *t, int sphere_i, double *r)
+{
+	t->ret = rtv1->sphere[sphere_i].rgb;
+	t->ret = recalc_rgb(t->ret, compute_lightning(rtv1, t->p,
+			t->n, rtv1->sphere[sphere_i].specular));
+	*r = rtv1->sphere[sphere_i].reflect;
+}

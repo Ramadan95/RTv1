@@ -31,7 +31,7 @@ new object
 	direction = (0.0, 1.0, 0.0)
 	color = 65230
 	specular = 0.0
-	reflective = 0.0
+	reflective = 0.3
 }
 new object
 {
@@ -40,7 +40,7 @@ new object
 	direction = (0.0, -1.0, 0.0)
 	color = 65230
 	specular = 0.0
-	reflective = 0.0
+	reflective = 0.4
 }
 new object
 {
@@ -49,7 +49,7 @@ new object
 	direction = (0.0, 0.0, -1.0)
 	color = 65230
 	specular = 0.0
-	reflective = 0.0
+	reflective = 0.4
 }
 
 
@@ -107,8 +107,8 @@ new object
 	position = (5.0, 5.0, -1)
 	radius = 2.0
 	color = 16711680
-	specular = 100.0
-	reflective = 0.0
+	specular = 10.0
+	reflective = 0.2
 }
 new object
 {

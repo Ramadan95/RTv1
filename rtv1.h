@@ -143,11 +143,11 @@ typedef	struct		s_inter_cone
 
 typedef	struct		s_helptrace
 {
-	t_color ret;
-	t_vect	p;
-	t_vect	n;
-	t_vect	ray;
-	t_color colref;
+	t_color			ret;
+	t_color			colref;
+	t_vect			p;
+	t_vect			n;
+	t_vect			ray;
 }					t_helptrace;
 
 typedef struct		s_rtv1
@@ -171,7 +171,10 @@ typedef struct		s_rtv1
 	int				y;
 }					t_rtv1;
 
+double				compute_lightning(t_rtv1 *rtv1, t_vect p,
+						t_vect n, double s);
 t_color				trace_ray(t_rtv1 *rtv1, t_vect o, t_vect d, double depth);
+void				tr(t_rtv1 *rtv1, t_helptrace *t, int sphere_i, double *r);
 int					get_closest_object(t_vect start, t_vect dir,
 						double *closest, t_rtv1 *rtv1);
 double				intersect_ray_object(t_rtv1 *rtv1,
@@ -198,6 +201,7 @@ t_rtv1				*read_obj_parameters(char *line, t_rtv1 **obj);
 t_light				*read_light_parameters(char *line, t_light **light);
 t_rtv1				*camera_init(char *line, t_rtv1 *rtv1);
 void				set_obj_type(char *line, t_rtv1 *obj);
+
 double				ft_atof(char *str);
 t_vect				norm(t_vect v);
 void				init_sdl(t_sdl *sdl);

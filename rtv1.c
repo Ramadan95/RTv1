@@ -17,18 +17,18 @@ int		main(int argc, char **argv)
 	t_rtv1	*rtv1;
 	t_sdl	*sdl;
 
-	if (argc != 2)
-	{
-		ft_putstr("Argument is not valid. Please, set number ");
-		ft_putendl("of scene in range from 1 to 8 as a argument");
-		err_exit();
-	}
+//	if (argc != 2)
+//	{
+//		ft_putstr("Argument is not valid. Please, set number ");
+//		ft_putendl("of scene in range from 1 to 8 as a argument");
+//		err_exit();
+//	}
 	if (!(rtv1 = malloc(sizeof(t_rtv1))))
 		err_exit();
 	if (!(sdl = malloc(sizeof(t_sdl))))
 		err_exit();
 	init_sdl(sdl);
-	scene_init(rtv1, "7");
+	scene_init(rtv1, "1");
 	sdl_run(sdl, rtv1);
 	SDL_DestroyRenderer(sdl->renderer);
 	SDL_DestroyWindow(sdl->window);
